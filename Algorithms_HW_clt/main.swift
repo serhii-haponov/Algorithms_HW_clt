@@ -8,4 +8,4 @@
 import Foundation
 
 print("Hello, World!")
-
+HW2_Task1().startCalculateBigestPrimeter()
