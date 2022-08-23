@@ -47,4 +47,14 @@ struct HW3_T1 {
         }
         return maxArea
     }
+    
+    func start() {
+        print("Enter array of int to calculate bigest area")
+        let input = readLine()
+        let intArray = parseIntArrayFrom(input!)
+        print("Answer:")
+        print(maxArea2(intArray))
+    }
 }
+
+

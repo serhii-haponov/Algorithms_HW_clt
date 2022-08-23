@@ -13,3 +13,9 @@ func measureTime(for closure: () -> Void) {
     let diff = CFAbsoluteTimeGetCurrent() - start
     print("Took \(diff) seconds")
 }
+
+func parseIntArrayFrom(_ string: String) -> [Int] {
+    var validatedStr = string.replacingOccurrences(of: "[", with: "")
+    validatedStr = validatedStr.replacingOccurrences(of: "]", with: "")
+    return validatedStr.split(separator: ",").map { Int($0)! }
+}

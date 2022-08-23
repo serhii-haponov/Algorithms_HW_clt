@@ -9,5 +9,5 @@ import Foundation
 
 print("Hello, World!")
 //HW2_Task1().startCalculateBigestPrimeter()
-print(HW3_T1().maxArea2([4,3,2,1,4])) //17
-
+HW3_T1().start()
+//[4,3,2,1,4])) //17
