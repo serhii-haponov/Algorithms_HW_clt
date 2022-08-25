@@ -51,7 +51,7 @@ struct HW3_T2 {
                 L += 1
             }
             
-            if S % sum == 0 {
+            if S % sum == 0 && S != 0 {
                 counter += 1
             }
         }
