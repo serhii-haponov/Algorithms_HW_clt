@@ -16,6 +16,7 @@
 		A875329B28B3E7C3002D1630 /* HW3_T1.swift in Sources */ = {isa = PBXBuildFile; fileRef = A875329A28B3E7C3002D1630 /* HW3_T1.swift */; };
 		A875329D28B55CB8002D1630 /* HW3_T2.swift in Sources */ = {isa = PBXBuildFile; fileRef = A875329C28B55CB8002D1630 /* HW3_T2.swift */; };
 		A875329F28B66227002D1630 /* HW3_HR_Raskin_Bobbins.swift in Sources */ = {isa = PBXBuildFile; fileRef = A875329E28B66227002D1630 /* HW3_HR_Raskin_Bobbins.swift */; };
+		A87532A128BB12B2002D1630 /* HW3_HR_1_10_100.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87532A028BB12B2002D1630 /* HW3_HR_1_10_100.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -41,6 +42,7 @@
 		A875329A28B3E7C3002D1630 /* HW3_T1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HW3_T1.swift; sourceTree = "<group>"; };
 		A875329C28B55CB8002D1630 /* HW3_T2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HW3_T2.swift; sourceTree = "<group>"; };
 		A875329E28B66227002D1630 /* HW3_HR_Raskin_Bobbins.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HW3_HR_Raskin_Bobbins.swift; sourceTree = "<group>"; };
+		A87532A028BB12B2002D1630 /* HW3_HR_1_10_100.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HW3_HR_1_10_100.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				A875329A28B3E7C3002D1630 /* HW3_T1.swift */,
 				A875329C28B55CB8002D1630 /* HW3_T2.swift */,
 				A875329E28B66227002D1630 /* HW3_HR_Raskin_Bobbins.swift */,
+				A87532A028BB12B2002D1630 /* HW3_HR_1_10_100.swift */,
 			);
 			path = HW3;
 			sourceTree = "<group>";
@@ -169,6 +172,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A875329428B0BDE2002D1630 /* HW2_Task1.swift in Sources */,
+				A87532A128BB12B2002D1630 /* HW3_HR_1_10_100.swift in Sources */,
 				A875329628B0BDE8002D1630 /* HW2_Task4.swift in Sources */,
 				A875329528B0BDE5002D1630 /* HW2_Task3.swift in Sources */,
 				A875329B28B3E7C3002D1630 /* HW3_T1.swift in Sources */,
