@@ -7,6 +7,8 @@
 
 import Foundation
 
+//https://codeforces.com/problemset/problem/279/B?locale=en
+
 //B. Books
 //time limit per test2 seconds
 //memory limit per test256 megabytes
@@ -75,5 +77,22 @@ private extension HW3_CF_BBooks {
             maxBooks = max(maxBooks, currentBooks)
         }
         return maxBooks
+    }
+    
+    // second variant:
+    private func calcAmount(t: Int, books: [Int]) -> Int {
+        guard t > 0 else { return 0 }
+        var sum = 0
+        var l = 0
+        var total = 0
+        for r in 0..<books.count {
+            sum += books[r]
+            while sum > t {
+                sum -= books[l]
+                l += 1
+            }
+            total = max(total, r - l + 1)
+        }
+        return total
     }
 }
