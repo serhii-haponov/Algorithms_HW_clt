@@ -17,6 +17,7 @@
 		A875329D28B55CB8002D1630 /* HW3_T2.swift in Sources */ = {isa = PBXBuildFile; fileRef = A875329C28B55CB8002D1630 /* HW3_T2.swift */; };
 		A875329F28B66227002D1630 /* HW3_HR_Raskin_Bobbins.swift in Sources */ = {isa = PBXBuildFile; fileRef = A875329E28B66227002D1630 /* HW3_HR_Raskin_Bobbins.swift */; };
 		A87532A128BB12B2002D1630 /* HW3_HR_1_10_100.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87532A028BB12B2002D1630 /* HW3_HR_1_10_100.swift */; };
+		A8E013F428C20BAD002FA5E6 /* HW3_CF_BBooks.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E013F328C20BAD002FA5E6 /* HW3_CF_BBooks.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -43,6 +44,7 @@
 		A875329C28B55CB8002D1630 /* HW3_T2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HW3_T2.swift; sourceTree = "<group>"; };
 		A875329E28B66227002D1630 /* HW3_HR_Raskin_Bobbins.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HW3_HR_Raskin_Bobbins.swift; sourceTree = "<group>"; };
 		A87532A028BB12B2002D1630 /* HW3_HR_1_10_100.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HW3_HR_1_10_100.swift; sourceTree = "<group>"; };
+		A8E013F328C20BAD002FA5E6 /* HW3_CF_BBooks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HW3_CF_BBooks.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				A875329C28B55CB8002D1630 /* HW3_T2.swift */,
 				A875329E28B66227002D1630 /* HW3_HR_Raskin_Bobbins.swift */,
 				A87532A028BB12B2002D1630 /* HW3_HR_1_10_100.swift */,
+				A8E013F328C20BAD002FA5E6 /* HW3_CF_BBooks.swift */,
 			);
 			path = HW3;
 			sourceTree = "<group>";
@@ -175,6 +178,7 @@
 				A87532A128BB12B2002D1630 /* HW3_HR_1_10_100.swift in Sources */,
 				A875329628B0BDE8002D1630 /* HW2_Task4.swift in Sources */,
 				A875329528B0BDE5002D1630 /* HW2_Task3.swift in Sources */,
+				A8E013F428C20BAD002FA5E6 /* HW3_CF_BBooks.swift in Sources */,
 				A875329B28B3E7C3002D1630 /* HW3_T1.swift in Sources */,
 				A875329728B0BDEA002D1630 /* HW2_Task2.swift in Sources */,
 				A875328728B0ABB4002D1630 /* main.swift in Sources */,
