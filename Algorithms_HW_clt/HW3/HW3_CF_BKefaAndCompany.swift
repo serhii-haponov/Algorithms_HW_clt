@@ -49,18 +49,65 @@ import Foundation
 //
 //In the second sample test we can take all the friends.
 
+private struct Friend {
+    let money: Int
+    let friendshipFactor: Int
+}
+
+private struct FriendsChar {
+    let diff: Int
+    let friends: [Friend]
+}
+
+//MARK: - Start
 struct HW3_CF_BKefaAndCompany {
-    
     func start() {
-        
+      let input = getInput()
+      print(calculateFriendAmount(friendsChar: input))
     }
 }
 
+//MARK: - Input
 private extension HW3_CF_BKefaAndCompany {
-    
-    
-    
+    func getInput() -> FriendsChar {
+        print("Set imput for HW3_CF_BKefaAndCompany:")
+        let firstLine = readLine()?.split(separator: " ")
+        let numOfFriends = firstLine?.first.flatMap { Int($0) } ?? 0
+        let diffMoney = firstLine?.last.flatMap { Int($0) } ?? 0
+
+        var friends: [Friend] = []
+        for _ in 1...numOfFriends {
+            let firstLine = readLine()?.split(separator: " ")
+            let money = firstLine?.first.flatMap { Int($0) } ?? 0
+            let friendshipFactor = firstLine?.last.flatMap { Int($0) } ?? 0
+            let friend = Friend(money: money, friendshipFactor: friendshipFactor)
+            friends.append(friend)
+        }
+        
+        return FriendsChar(diff: diffMoney, friends: friends)
+    }
 }
 
+//MARK: - Execution
+private extension HW3_CF_BKefaAndCompany {
+//    1 2 3 4 5 6 7 8 9
+    
+    func calculateFriendAmount(friendsChar: FriendsChar) -> Int {
+        let sortedByMoney = friendsChar.friends.sorted { $0.money < $1.money }
 
-
+        var bigestFriendshipFactor = 0
+        var currentFriendshipFactor = 0
+        var L = 0
+        
+        for P in 0..<sortedByMoney.count {
+            while (sortedByMoney[P].money - sortedByMoney[L].money) >= friendsChar.diff  {
+                currentFriendshipFactor -= sortedByMoney[L].friendshipFactor
+                L += 1
+            }
+            currentFriendshipFactor += sortedByMoney[P].friendshipFactor
+            bigestFriendshipFactor = max(bigestFriendshipFactor, currentFriendshipFactor)
+        }
+        
+        return bigestFriendshipFactor
+    }
+}

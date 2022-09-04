@@ -49,12 +49,16 @@ struct HW3_CF_BBooks {
 
 
 private extension HW3_CF_BBooks {
+    struct Item {
+        let time: Int
+        let bookTimes: [Int]
+    }
     
-    func readBBooksInput() -> (time: Int, bookTimes: [Int]) {
+    func readBBooksInput() -> Item {
         print("Set imput for HW3_CF_BBooks:")
         let time = readLine()?.split(separator: " ").last.flatMap { Int($0) } ?? 0
         let bookTimes = readLine()?.split(separator: " ").compactMap { Int($0) } ?? []
-        return (time, bookTimes)
+        return Item(time: time, bookTimes: bookTimes)
     }
     
     func getMaxNumOfBooks(timeLimit: Int, bookTimes: [Int]) -> Int {
