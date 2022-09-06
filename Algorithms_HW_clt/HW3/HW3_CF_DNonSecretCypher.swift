@@ -59,7 +59,7 @@ struct HW3_CF_DNonSecretCypher {
     
     func start() {
         let input = getInput()
-        print(input)
+        print(getSubArraysWithRepeatNumbers(amount: input.amountOfMutualNumber, array: input.arrayOfIntegers))
     }
 }
 
@@ -80,5 +80,23 @@ private extension HW3_CF_DNonSecretCypher {
 //MARK: - Execution
 private extension HW3_CF_DNonSecretCypher {
     
-    
+    func getSubArraysWithRepeatNumbers(amount: Int, array: [Int]) -> Int {
+        var repeatAmount = 0
+
+        for l in 0..<array.count {
+            var amountOfMetches = 0
+            for r in l..<array.count {
+                if array[l] == array[r] {
+                    amountOfMetches += 1
+                }
+                
+                if amountOfMetches >= amount {
+                    repeatAmount += (array.count - r)
+                    break
+                }
+            }
+        }
+        
+        return repeatAmount
+    }
 }
