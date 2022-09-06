@@ -99,4 +99,24 @@ private extension HW3_CF_DNonSecretCypher {
         
         return repeatAmount
     }
+    
+//  Max solution
+    private func fastCalcAmount(k: Int, items: [Int]) -> Int {
+        guard k > 0 else { return 0 }
+        var l = 0
+        var total = 0
+        var numbers = [Int: Int]()
+        for r in 0..<items.count {
+            let value = items[r]
+            
+            numbers[value, default: 0] += 1
+            
+            while (numbers[value] ?? 0) >= k {
+                total += items.count - r
+                numbers[items[l], default: 0] -= 1
+                l += 1
+            }
+        }
+        return total
+    }
 }
