@@ -46,21 +46,27 @@ struct HW3_Garland {
     
     func start() {
         let input = getInput()
-        print(input)
+        print(calculateLastLampHeight(lamps: input.lamps, haightStartLamp: input.haightStartLamp))
     }
 }
 
 //MARK: - Input
 private extension HW3_Garland {
-    func getInput() -> Int {
+    func getInput() -> (lamps: Int, haightStartLamp: Double) {
         print("Set imput for HW3_Garland:")
-        let firstLine = readLine()?.split(separator: " ")
-        return 1
+        let firstLine = readLine()?.split(separator: " ") ?? []
+        let lamps = Int(firstLine[0]) ?? 0
+        let haightStartLamp = Double(firstLine[1]) ?? 0.0
+        return (lamps, haightStartLamp)
     }
 }
 
 //MARK: - Execution
 private extension HW3_Garland {
     
+    func calculateLastLampHeight(lamps: Int, haightStartLamp: Double) -> Double {
+        
+        return 0.0
+    }
     
 }

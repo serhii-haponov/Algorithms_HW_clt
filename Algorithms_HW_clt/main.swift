@@ -8,4 +8,4 @@
 import Foundation
 
 print("Hello, World!")
-HW3_HR_Auto_Loan().start()
+HW3_Garland().start()
