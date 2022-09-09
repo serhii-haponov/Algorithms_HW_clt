@@ -40,3 +40,27 @@ import Foundation
 //Sample Output 1
 //
 //446113.344348
+
+//MARK: - Start
+struct HW3_Garland {
+    
+    func start() {
+        let input = getInput()
+        print(input)
+    }
+}
+
+//MARK: - Input
+private extension HW3_Garland {
+    func getInput() -> Int {
+        print("Set imput for HW3_Garland:")
+        let firstLine = readLine()?.split(separator: " ")
+        return 1
+    }
+}
+
+//MARK: - Execution
+private extension HW3_Garland {
+    
+    
+}
