@@ -1,5 +1,5 @@
 //
-//  HW3_T2.swift
+//  HW3_Subarray_Sums.swift
 //  Algorithms_HW_clt
 //
 //  Created by Serhii Haponov on 23.08.2022.
@@ -7,7 +7,75 @@
 
 import Foundation
 
-struct HW3_T2 {
+//https://cses.fi/problemset/task/1660
+
+//Given an array of n
+//n
+// positive integers, your task is to count the number of subarrays having sum x
+//x
+//.
+//
+//Input
+//
+//The first input line has two integers n
+//n
+// and x
+//x
+//: the size of the array and the target sum x
+//x
+//.
+//
+//The next line has n
+//n
+// integers a1,a2,…,an
+//a
+//1
+//,
+//a
+//2
+//,
+//…
+//,
+//a
+//n
+//: the contents of the array.
+//
+//Output
+//
+//Print one integer: the required number of subarrays.
+//
+//Constraints
+//1≤n≤2⋅105
+//1
+//≤
+//n
+//≤
+//2
+//⋅
+//10
+//5
+//
+//1≤x,ai≤109
+//1
+//≤
+//x
+//,
+//a
+//i
+//≤
+//10
+//9
+//
+//Example
+//
+//Input:
+//5 7
+//2 4 1 2 7
+//
+//Output:
+//3
+
+struct HW3_Subarray_Sums {
     
     func amountOfSubArraysFor(sum: Int, in array: [Int]) -> Int {
         var counter: Int = 0
