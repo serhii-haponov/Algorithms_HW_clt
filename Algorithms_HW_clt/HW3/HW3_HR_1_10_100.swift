@@ -7,6 +7,29 @@
 
 import Foundation
 
+//https://www.hackerrank.com/contests/projector-algo-base-7-hw-2-123/challenges/1-10-100-1000-1
+
+//Let's consider an infinite sequence of digits constructed of ascending powers of 10 written one after another. Here is the beginning of the sequence:  You are to find out what digit is located at the definite position of the sequence.
+//
+//Input Format
+//
+//There is the only integer  in the first line . The -th of  left lines contains the integer  — the number of position in the sequence.
+
+//Output Format
+//
+//You are to output  digits  or  separated with a space. More precisely, the -th digit of output is to be equal to the -th digit of the sequence described above.
+//
+//Sample Input 0
+//
+//4
+//3
+//14
+//7
+//6
+//Sample Output 0
+//
+//0 0 1 0
+
 struct HW3_HR_1_10_100 {
     
     func start() {

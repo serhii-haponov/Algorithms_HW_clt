@@ -21,6 +21,7 @@
 		A8E013F628C31F08002FA5E6 /* HW3_CF_BKefaAndCompany.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E013F528C31F08002FA5E6 /* HW3_CF_BKefaAndCompany.swift */; };
 		A8E0144028C534D3002FA5E6 /* HW3_CF_DNonSecretCypher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E0143F28C534D3002FA5E6 /* HW3_CF_DNonSecretCypher.swift */; };
 		A8E0144228C7B97A002FA5E6 /* HW3_HR_Auto_Loan.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E0144128C7B97A002FA5E6 /* HW3_HR_Auto_Loan.swift */; };
+		A8E0144428CB62D9002FA5E6 /* HW3_Garland.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E0144328CB62D9002FA5E6 /* HW3_Garland.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -51,6 +52,7 @@
 		A8E013F528C31F08002FA5E6 /* HW3_CF_BKefaAndCompany.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HW3_CF_BKefaAndCompany.swift; sourceTree = "<group>"; };
 		A8E0143F28C534D3002FA5E6 /* HW3_CF_DNonSecretCypher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HW3_CF_DNonSecretCypher.swift; sourceTree = "<group>"; };
 		A8E0144128C7B97A002FA5E6 /* HW3_HR_Auto_Loan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HW3_HR_Auto_Loan.swift; sourceTree = "<group>"; };
+		A8E0144328CB62D9002FA5E6 /* HW3_Garland.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HW3_Garland.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 				A875329E28B66227002D1630 /* HW3_HR_Raskin_Bobbins.swift */,
 				A87532A028BB12B2002D1630 /* HW3_HR_1_10_100.swift */,
 				A8E0144128C7B97A002FA5E6 /* HW3_HR_Auto_Loan.swift */,
+				A8E0144328CB62D9002FA5E6 /* HW3_Garland.swift */,
 				A8E013F328C20BAD002FA5E6 /* HW3_CF_BBooks.swift */,
 				A8E013F528C31F08002FA5E6 /* HW3_CF_BKefaAndCompany.swift */,
 				A8E0143F28C534D3002FA5E6 /* HW3_CF_DNonSecretCypher.swift */,
@@ -191,6 +194,7 @@
 				A875329B28B3E7C3002D1630 /* HW3_T1.swift in Sources */,
 				A875329728B0BDEA002D1630 /* HW2_Task2.swift in Sources */,
 				A875328728B0ABB4002D1630 /* main.swift in Sources */,
+				A8E0144428CB62D9002FA5E6 /* HW3_Garland.swift in Sources */,
 				A875329D28B55CB8002D1630 /* HW3_T2.swift in Sources */,
 				A875329F28B66227002D1630 /* HW3_HR_Raskin_Bobbins.swift in Sources */,
 				A8E0144028C534D3002FA5E6 /* HW3_CF_DNonSecretCypher.swift in Sources */,
