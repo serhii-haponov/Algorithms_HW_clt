@@ -47,7 +47,6 @@ struct HW3_Garland {
     func start() {
         let input = getInput()
         print(calculateLastLampHeight(lamps: input.lamps, startHaight: input.startHaight))
-        print(input)
     }
 }
 
@@ -66,8 +65,44 @@ private extension HW3_Garland {
 private extension HW3_Garland {
     
     func calculateLastLampHeight(lamps: Int, startHaight: Double) -> Double {
+//        h[i] = (h[i - 1] + h[i + 1]) / 2 - 1
+//        h[i] = h[i - 1]/2 + h[i + 1]/2 - 1
+//       - h[i + 1]/2 = h[i - 1]/2 - h[i]  - 1
+//        h[i + 1] = 2h[i] - h[i - 1] + 2
         
-        return 0.0
+        var minRange = 0.0
+        var maxRange = startHaight
+        
+        var minFinishHaight = startHaight * Double(lamps)
+        
+        
+        while maxRange - minRange > 0.005 {
+            let middle = (minRange + maxRange) / 2
+            
+            var firstHeight = startHaight
+            var secondHeight = middle
+            var thirdHaight = startHaight
+            
+            for _ in 3...lamps {
+                thirdHaight = 2 * secondHeight - firstHeight + 2
+                print(firstHeight, secondHeight)
+                print(thirdHaight)
+                if thirdHaight < 0 { break }
+                firstHeight = secondHeight
+                secondHeight = thirdHaight
+               
+            }
+            
+            if thirdHaight >= 0, minFinishHaight > thirdHaight {
+                
+                minFinishHaight = thirdHaight
+                maxRange = middle
+            } else {
+                minRange = middle
+            }
+        }
+        
+        return minFinishHaight
     }
     
 }
