@@ -74,33 +74,69 @@ private extension HW3_Garland {
         var maxRange = startHaight
         var middle = (minRange + maxRange) / 2
         
-        var minFinishHaight = 0.0
+        var minFinishHaight = 0.0 //Double.greatestFiniteMagnitude
         
         while maxRange != middle, minRange != middle {
             var firstHeight = startHaight
             var secondHeight = middle
             var thirdHaight = 0.0
             
-            for i in 3...lamps {
+            for _ in 3...lamps {
                 thirdHaight = 2 * secondHeight - firstHeight + 2
-                print("-----\(i)-------")
-                print(firstHeight, secondHeight)
-                print(thirdHaight)
-                if thirdHaight < 0 { break }
                 firstHeight = secondHeight
                 secondHeight = thirdHaight
+                if thirdHaight < 0 { break }
             }
             
-            if thirdHaight > firstHeight {
+            if thirdHaight > 0 {
                 minFinishHaight = thirdHaight
                 maxRange = middle
             } else {
                 minRange = middle
             }
-                        
+
             middle = (minRange + maxRange) / 2
         }
         
         return minFinishHaight
+    }
+    
+    //Max Version
+    private func calcGarlandHeight(n: Int, a: Double) -> Double {
+
+        func isGoodEnough(points: inout Array<Double>) -> Bool {
+            var i = 2
+            while i < points.count {
+                points[i] = (points[i - 1] + 1) * 2 - points[i - 2]
+                if points[i] < 0 {
+                    return true
+                }
+                i += 1
+            }
+
+            return false
+        }
+
+        var points = Array<Double>(repeating: -1, count: n)
+        points[0] = a
+        var bad = a
+        var good = 0.0
+        var m = (bad + good) / 2
+        var minB = Double.greatestFiniteMagnitude
+        while bad - good > 0.0000001 {
+            points[1] = m
+            if isGoodEnough(points: &points) {
+                good = m
+            } else {
+                bad = m
+            }
+            if points[n - 1] >= 0 {
+                minB = min(points[n - 1], minB)
+            }
+
+            m = (bad + good) / 2
+        }
+
+        return minB
     }
 }
