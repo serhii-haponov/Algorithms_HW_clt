@@ -64,45 +64,43 @@ private extension HW3_Garland {
 //MARK: - Execution
 private extension HW3_Garland {
     
+    //        h[i] = (h[i - 1] + h[i + 1]) / 2 - 1
+    //        h[i] = h[i - 1]/2 + h[i + 1]/2 - 1
+    //       - h[i + 1]/2 = h[i - 1]/2 - h[i]  - 1
+    //        h[i + 1] = 2h[i] - h[i - 1] + 2
+    
     func calculateLastLampHeight(lamps: Int, startHaight: Double) -> Double {
-//        h[i] = (h[i - 1] + h[i + 1]) / 2 - 1
-//        h[i] = h[i - 1]/2 + h[i + 1]/2 - 1
-//       - h[i + 1]/2 = h[i - 1]/2 - h[i]  - 1
-//        h[i + 1] = 2h[i] - h[i - 1] + 2
-        
         var minRange = 0.0
         var maxRange = startHaight
+        var middle = (minRange + maxRange) / 2
         
-        var minFinishHaight = startHaight * Double(lamps)
+        var minFinishHaight = 0.0
         
-        
-        while maxRange - minRange > 0.005 {
-            let middle = (minRange + maxRange) / 2
-            
+        while maxRange != middle, minRange != middle {
             var firstHeight = startHaight
             var secondHeight = middle
-            var thirdHaight = startHaight
+            var thirdHaight = 0.0
             
-            for _ in 3...lamps {
+            for i in 3...lamps {
                 thirdHaight = 2 * secondHeight - firstHeight + 2
+                print("-----\(i)-------")
                 print(firstHeight, secondHeight)
                 print(thirdHaight)
                 if thirdHaight < 0 { break }
                 firstHeight = secondHeight
                 secondHeight = thirdHaight
-               
             }
             
-            if thirdHaight >= 0, minFinishHaight > thirdHaight {
-                
+            if thirdHaight > firstHeight {
                 minFinishHaight = thirdHaight
                 maxRange = middle
             } else {
                 minRange = middle
             }
+                        
+            middle = (minRange + maxRange) / 2
         }
         
         return minFinishHaight
     }
-    
 }
