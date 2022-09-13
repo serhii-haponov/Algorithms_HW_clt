@@ -119,3 +119,137 @@ struct HW3_HR_Raskin_Bobbins {
 //4
 //4
 //2 2 4 3
+
+// Max version
+struct RaskinBobbins {
+    struct Icecream {
+        let id: Int
+        var price: Int
+    }
+
+    let money: Int
+    let prices: [Icecream]
+
+    func purchaseIDs() -> [Int] {
+        fast_v2()
+    }
+
+//    func fast_v1() -> [Int] {
+//        let arr = prices.sorted(by: { $0.price < $1.price }) // N*logN
+//
+//        var bad = 0
+//        var good = arr.count
+//        let half = Int((Double(money) / 2).rounded(.up)) // m/2
+//        // find first index more than half Money
+//        while good - bad > 1 { // logN
+//            let m = (good + bad) / 2
+//            if arr[m].price >= half {
+//                good = m
+//            } else {
+//                bad = m
+//            }
+//        }
+//
+//        let minIndex = good // more or equal to M/2
+//        var i = minIndex
+//        while i < arr.count, arr[i].price < money {
+//            let firstPrice = money - arr[i].price
+//            var bad = minIndex
+//            var good = -1
+//            while bad - good > 1 {
+//                let m = (good + bad) / 2
+//                if arr[m].price == firstPrice {
+//                    return [ // result
+//                        min(arr[m].id, arr[i].id),
+//                        max(arr[m].id, arr[i].id)
+//                    ]
+//                } else if arr[m].price < firstPrice {
+//                    good = m
+//                } else {
+//                    bad = m
+//                }
+//            }
+//            i += 1
+//        }
+//
+//        return []
+//    }
+
+    func fast_v2() -> [Int] {
+
+        func findMoreOrEqual(price: Int, in arr: [Icecream],
+                             badIndex: Int, goodIndex: Int) -> Int {
+            var bad = badIndex
+            var good = goodIndex
+            // find first index more than half Money
+            while good - bad > 1 { // logN
+                let m = (good + bad) / 2
+                if arr[m].price >= price {
+                    good = m
+                } else {
+                    bad = m
+                }
+            }
+            return good
+        }
+
+        let arr = prices.sorted(by: { $0.price < $1.price }) // N*logN
+        let half = Int((Double(money) / 2).rounded(.up)) // m/2
+        // find first index more than half Money
+        // can't use i as minIndex because of corner case 2 equal half: [1, 2, 10, 10, 12]
+        var i = findMoreOrEqual(price: half, in: arr,
+                                badIndex: -1, goodIndex: arr.count)
+        while i < arr.count, arr[i].price < money {
+            let firstPrice = money - arr[i].price
+
+            let matchIndex = findMoreOrEqual(price: firstPrice, in: arr,
+                                             badIndex: -1, goodIndex: i)
+            if matchIndex != i, arr[matchIndex].price == firstPrice {
+                return [ // result
+                    min(arr[matchIndex].id, arr[i].id),
+                    max(arr[matchIndex].id, arr[i].id)
+                ]
+            }
+
+            i += 1
+        }
+
+        return []
+    }
+
+    func slow() -> [[Int]] {
+        var options = [[Int]]()
+        for i in 0..<prices.count {
+            for j in i+1..<prices.count {
+                if prices[i].price + prices[j].price == money {
+                    let result = [ // result
+                        min(prices[i].id, prices[j].id),
+                        max(prices[i].id, prices[j].id),
+                    ]
+                    options.append(result)
+                }
+            }
+        }
+
+        return options
+    }
+}
+
+private func readRuskinInput() -> [RaskinBobbins] {
+    let size = Int(readLine() ?? "") ?? 0
+
+    var trips = [RaskinBobbins]()
+    for _ in 0..<size {
+        let money = Int(readLine() ?? "") ?? 0
+        let _ = Int(readLine() ?? "") ?? 0
+        let items = (readLine() ?? "")
+            .split(separator: " ")
+            .compactMap { Int($0) }
+            .enumerated()
+            .map({ RaskinBobbins.Icecream(id: $0.offset + 1, price: $0.element) })
+
+        trips.append(RaskinBobbins(money: money, prices: items))
+    }
+
+    return trips
+}
