@@ -8,4 +8,9 @@
 import Foundation
 
 print("Hello, World!")
-HW3_Garland().start()
+//HW3_Garland().start()
+
+var array = [0, -10, 5, 4, 1, -123123123123, -10]
+print(array)
+MergeSort.mergeSort(a: &array)
+print(array)
