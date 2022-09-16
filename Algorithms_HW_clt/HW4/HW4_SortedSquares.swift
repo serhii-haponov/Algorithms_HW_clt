@@ -53,5 +53,24 @@ struct HW4_SortedSquares {
         
         return array
     }
+    
+    // MaxSolution
+    func sortedSquares(_ nums: [Int]) -> [Int] {
+        var result = Array(repeating: 0, count: nums.count)
+        var l = 0
+        var r = nums.count - 1
+        var i = nums.count - 1
+        while l <= r {
+            if abs(nums[l]) < abs(nums[r]) {
+                result[i] = nums[r] * nums[r]
+                r -= 1
+            }  else {
+                result[i] = nums[l] * nums[l]
+                l += 1
+            }
+            i -= 1
+        }
+        return result
+    }
 }
 

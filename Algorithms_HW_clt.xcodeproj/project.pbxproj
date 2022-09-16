@@ -25,6 +25,7 @@
 		A8E0144228C7B97A002FA5E6 /* HW3_HR_Auto_Loan.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E0144128C7B97A002FA5E6 /* HW3_HR_Auto_Loan.swift */; };
 		A8E0144428CB62D9002FA5E6 /* HW3_Garland.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E0144328CB62D9002FA5E6 /* HW3_Garland.swift */; };
 		A8EBE97E28D43CBC00B4D1EE /* HW4_Lvivstar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EBE97D28D43CBC00B4D1EE /* HW4_Lvivstar.swift */; };
+		A8EBE98028D4DF0E00B4D1EE /* BinarySearchTemp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EBE97F28D4DF0E00B4D1EE /* BinarySearchTemp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -59,6 +60,7 @@
 		A8E0144128C7B97A002FA5E6 /* HW3_HR_Auto_Loan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HW3_HR_Auto_Loan.swift; sourceTree = "<group>"; };
 		A8E0144328CB62D9002FA5E6 /* HW3_Garland.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HW3_Garland.swift; sourceTree = "<group>"; };
 		A8EBE97D28D43CBC00B4D1EE /* HW4_Lvivstar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HW4_Lvivstar.swift; sourceTree = "<group>"; };
+		A8EBE97F28D4DF0E00B4D1EE /* BinarySearchTemp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinarySearchTemp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				A806D41928D1056100C100BE /* MergeSort.swift */,
+				A8EBE97F28D4DF0E00B4D1EE /* BinarySearchTemp.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -214,6 +217,7 @@
 				A875329428B0BDE2002D1630 /* HW2_Task1.swift in Sources */,
 				A87532A128BB12B2002D1630 /* HW3_HR_1_10_100.swift in Sources */,
 				A806D41A28D1056100C100BE /* MergeSort.swift in Sources */,
+				A8EBE98028D4DF0E00B4D1EE /* BinarySearchTemp.swift in Sources */,
 				A875329628B0BDE8002D1630 /* HW2_Task4.swift in Sources */,
 				A875329528B0BDE5002D1630 /* HW2_Task3.swift in Sources */,
 				A8E013F428C20BAD002FA5E6 /* HW3_CF_BBooks.swift in Sources */,

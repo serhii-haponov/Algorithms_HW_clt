@@ -8,5 +8,5 @@
 import Foundation
 
 print("Hello, World!")
-HW4_Lvivstar().start()
+//HW4_Lvivstar().start()
 
