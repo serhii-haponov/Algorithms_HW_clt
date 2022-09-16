@@ -8,13 +8,5 @@
 import Foundation
 
 print("Hello, World!")
-//HW3_Garland().start()
+HW4_Lvivstar().start()
 
-//var array = [0, -10, 5, 4, 1, -123123123123, -10]
-//print(array)
-//MergeSort.mergeSort(a: &array)
-//print(array)
-
-
-let sort = HW4_SortedSquares().sortedSquares([-7,-3,2,3,11])
-print(sort)

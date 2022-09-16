@@ -24,6 +24,7 @@
 		A8E0144028C534D3002FA5E6 /* HW3_CF_DNonSecretCypher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E0143F28C534D3002FA5E6 /* HW3_CF_DNonSecretCypher.swift */; };
 		A8E0144228C7B97A002FA5E6 /* HW3_HR_Auto_Loan.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E0144128C7B97A002FA5E6 /* HW3_HR_Auto_Loan.swift */; };
 		A8E0144428CB62D9002FA5E6 /* HW3_Garland.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E0144328CB62D9002FA5E6 /* HW3_Garland.swift */; };
+		A8EBE97E28D43CBC00B4D1EE /* HW4_Lvivstar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EBE97D28D43CBC00B4D1EE /* HW4_Lvivstar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -57,6 +58,7 @@
 		A8E0143F28C534D3002FA5E6 /* HW3_CF_DNonSecretCypher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HW3_CF_DNonSecretCypher.swift; sourceTree = "<group>"; };
 		A8E0144128C7B97A002FA5E6 /* HW3_HR_Auto_Loan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HW3_HR_Auto_Loan.swift; sourceTree = "<group>"; };
 		A8E0144328CB62D9002FA5E6 /* HW3_Garland.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HW3_Garland.swift; sourceTree = "<group>"; };
+		A8EBE97D28D43CBC00B4D1EE /* HW4_Lvivstar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HW4_Lvivstar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				A806D41C28D12C0F00C100BE /* HW4_SortedSquares.swift */,
+				A8EBE97D28D43CBC00B4D1EE /* HW4_Lvivstar.swift */,
 			);
 			path = HW4;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 				A8E013F428C20BAD002FA5E6 /* HW3_CF_BBooks.swift in Sources */,
 				A875329B28B3E7C3002D1630 /* HW3_Most_Water.swift in Sources */,
 				A875329728B0BDEA002D1630 /* HW2_Task2.swift in Sources */,
+				A8EBE97E28D43CBC00B4D1EE /* HW4_Lvivstar.swift in Sources */,
 				A875328728B0ABB4002D1630 /* main.swift in Sources */,
 				A8E0144428CB62D9002FA5E6 /* HW3_Garland.swift in Sources */,
 				A875329D28B55CB8002D1630 /* HW3_Subarray_Sums.swift in Sources */,
