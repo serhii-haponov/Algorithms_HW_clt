@@ -38,7 +38,8 @@ struct HW4_Lvivstar {
     
     func start() {
         let input = getInput()
-        print(input)
+        executeCommands(input.baseStations, input.commands)
+        
     }
 }
 
@@ -67,7 +68,25 @@ private extension HW4_Lvivstar {
 //MARK: - Execution
 private extension HW4_Lvivstar {
     
-    func executeCommands(baseStations: [Int], commands: [CommandsType]) -> [Int] {
-        return []
+    //brute_forse
+    func executeCommands(_ baseStations: [Int], _ commands: [CommandsType]) {
+        var stations = baseStations
+    
+        for com in commands {
+            switch com {
+            case .COUNT(let fromId, let toId):
+                var counter = 0
+                for i in (fromId - 1)..<toId {
+                  counter += stations[i]
+                }
+                print(counter)
+            case .ENTER(let id):
+                stations[id - 1] += 1
+            case .LEAVE(let id):
+                stations[id - 1] -= 1
+            case .unknowed:
+                print("error")
+            }
+        }
     }
 }
