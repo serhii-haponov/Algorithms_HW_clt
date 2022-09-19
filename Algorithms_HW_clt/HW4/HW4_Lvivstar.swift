@@ -93,29 +93,49 @@ private extension HW4_Lvivstar {
     //    2 0 2 3 1
     func executeCommands2(_ baseStations: [Int], _ commands: [CommandsType]) {
         
-        let sqrtInterval = Int(sqrt(Double(baseStations.count)))
-        var intervals: [Int] = []
-        var sum = 0
+//        let sqrtInterval = Int(sqrt(Double(baseStations.count)))
+//        var intervals: [Int] = []
         
-        for i in 0..<baseStations.count {
-            if (i % sqrtInterval == 0 && i != 0) {
-                intervals.append(sum)
-                sum = baseStations[i]
-                if i == baseStations.count - 1 {
-                    intervals.append(sum)
-                }
-            } else {
-                sum += baseStations[i]
-            }
-        }
+        
+           let n = baseStations.count
+           let sqrtInterval = Int(sqrt(Double(n)))
+           let sizePerChunk = Int((Double(n) / Double(sqrtInterval)).rounded(.up))
+           var intervals = Array(repeating: 0, count: sqrtInterval)
+
+           func getChunkIndex(for i: Int) -> Int {
+               i / sizePerChunk
+           }
+
+           for i in 0..<n {
+               let chIndex = getChunkIndex(for: i)
+               intervals[chIndex] += baseStations[i]
+           }
+        
+//        var sum = 0
+//        var intervalSeparator = sqrtInterval
+//        for i in 0..<baseStations.count {
+//            if i < intervalSeparator {
+//                sum += baseStations[i]
+//            } else {
+//                intervals.append(sum)
+//                sum = baseStations[i]
+//                intervalSeparator += sqrtInterval
+//            }
+//
+//            if  i >= baseStations.count - 1 {
+//                intervals.append(sum)
+//            }
+//        }
         
         func positionInInterval(for id: Int) -> (intervalId: Int, idPosition: Int) {
-            let intervalId = (id + 1) / sqrtInterval - 1
-            let idPosition = (id - 1) % sqrtInterval
+            let intervalId = (id - 1) / sizePerChunk
+            let idPosition = (id - 1) % sizePerChunk
             return (intervalId, idPosition)
         }
         
         var baseStations = baseStations
+        
+        var responseData: [Int] = []
         
         for com in commands {
             switch com {
@@ -125,16 +145,14 @@ private extension HW4_Lvivstar {
                 let upperPosition = positionInInterval(for: toId)
                 
                 if lowPosition.intervalId != upperPosition.intervalId {
-                    
                     var lowSum = intervals[lowPosition.intervalId]
                     for i in 0..<lowPosition.idPosition {
                         lowSum -= (baseStations[fromId - 1 - lowPosition.idPosition + i])
                     }
                     
-                    var upperSum = intervals[upperPosition.intervalId]
-                    for i in upperPosition.idPosition...sqrtInterval {
-                        guard toId + i < baseStations.count else { break }
-                        upperSum -= (baseStations[toId + i])
+                    var upperSum = 0
+                    for i in 1...upperPosition.idPosition + 1 {
+                        upperSum += (baseStations[toId - i])
                     }
                     
                     var sum = lowSum + upperSum
@@ -142,36 +160,138 @@ private extension HW4_Lvivstar {
                     for i in (lowPosition.intervalId + 1)..<upperPosition.intervalId {
                         sum += intervals[i]
                     }
-                    
-                    print(sum)
+                    responseData.append(sum)
                 } else {
-                    print("implement one grab solution")
+                    var sum = 0
+                    for i in fromId - 1..<toId {
+                        sum += baseStations[i]
+                    }
+                    responseData.append(sum)
                 }
-                
-                
-                //                let lowPositionInterval = (fromId + 1) / sqrtInterval - 1
-                //                let positionInInterval =  (fromId - 1) % sqrtInterval
-                
-                //                var lowSum = intervals[lowPosition.intervalId]
-                //                for i in 0..<lowPosition.idPosition {
-                //                    lowSum -= (baseStations[fromId - 1 - lowPosition.idPosition + i])
-                //                }
-                
-                //                print(counter)
             case .ENTER(let id):
-                print("ENTER")
                 baseStations[id - 1] += 1
-                let position = positionInInterval(for: id)
-                intervals[position.intervalId] += 1
+                let intervalId = (id - 1) / sizePerChunk
+                intervals[intervalId] += 1
             case .LEAVE(let id):
-                print("LEAVE")
                 baseStations[id - 1] -= 1
-                let position = positionInInterval(for: id)
-                intervals[position.intervalId] -= 1
+                let intervalId = (id - 1) / sizePerChunk
+                intervals[intervalId] -= 1
             case .unknowed:
                 print("error")
             }
         }
-        
+        let stringRepresentation = responseData.map{ String($0) }.joined(separator:"\n")
+        print(stringRepresentation)
     }
 }
+
+
+// MARK: - MAX SOLUTION
+struct Lvivstar {
+    enum Command {
+        case count(l: Int, r: Int)
+        case enter(Int)
+        case leave(Int)
+    }
+
+    var commands: [Command] = []
+    var usersPerStation: [Int] = []
+
+    func execute() {
+        var usersPerStation = usersPerStation
+        let n = usersPerStation.count
+        let chunksAmount = Int(sqrt(Double(n)))
+        let sizePerChunk = Int((Double(n) / Double(chunksAmount)).rounded(.up))
+        var chunksSums = Array(repeating: 0, count: chunksAmount)
+
+        func getChunkIndex(for i: Int) -> Int {
+            i / sizePerChunk
+        }
+
+        for i in 0..<n {
+            let chIndex = getChunkIndex(for: i)
+            chunksSums[chIndex] += usersPerStation[i]
+        }
+
+        var output = ""
+        for item in commands {
+            switch item {
+            case let .count(l, r):
+                let leftChunkIndex = getChunkIndex(for: l)
+                let rightChunkIndex = getChunkIndex(for: r)
+
+                var res = 0
+                if leftChunkIndex == rightChunkIndex {
+                    for i in l...r {
+                        res += usersPerStation[i]
+                    }
+                } else {
+                    var i = leftChunkIndex + 1
+                    while i < rightChunkIndex {
+                        res += chunksSums[i]
+                        i += 1
+                    }
+
+                    i = l
+                    let max = (leftChunkIndex + 1) * sizePerChunk
+                    while i < max {
+                        res += usersPerStation[i]
+                        i += 1
+                    }
+
+                    i = rightChunkIndex * sizePerChunk
+                    while i <= r {
+                        res += usersPerStation[i]
+                        i += 1
+                    }
+                }
+                output += "\(res)\n"
+            case .enter(let i):
+                let chIndex = getChunkIndex(for: i)
+                chunksSums[chIndex] += 1
+                usersPerStation[i] += 1
+            case .leave(let i):
+                let chIndex = getChunkIndex(for: i)
+                chunksSums[chIndex] -= 1
+                usersPerStation[i] -= 1
+            }
+        }
+        print(output)
+    }
+    
+    func readInput() -> Lvivstar {
+        let _ = Int(readLine() ?? "") ?? 0
+        let users = (readLine() ?? "")
+            .split(separator: " ")
+            .compactMap({ Int($0) })
+        let q = Int(readLine() ?? "") ?? 0
+
+        var commands: [Lvivstar.Command] = []
+        for _ in 0..<q {
+            let commandStr = (readLine() ?? "")
+                .split(separator: " ")
+
+            switch commandStr[0] {
+            case "COUNT":
+                let l = (Int(commandStr[1]) ?? 0) - 1
+                let r = (Int(commandStr[2]) ?? 0) - 1
+                commands.append(.count(l: l, r: r))
+            case "ENTER":
+                let i = (Int(commandStr[1]) ?? 0) - 1
+                commands.append(.enter(i))
+            case "LEAVE":
+                let i = (Int(commandStr[1]) ?? 0) - 1
+                commands.append(.leave(i))
+            default:
+                break
+            }
+        }
+
+        return Lvivstar(commands: commands, usersPerStation: users)
+    }
+
+    func start() {
+        readInput().execute()
+    }
+}
+
