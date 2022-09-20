@@ -21,14 +21,14 @@ struct HW4_Lvivstar {
             
             switch data.first {
             case "COUNT":
-                let fromId = Int(data[1])!
-                let toId = Int(data[2])!
+                let fromId = Int(data[1])! - 1
+                let toId = Int(data[2])! - 1
                 return COUNT(fromId: fromId, toId: toId)
             case "ENTER":
-                let id = Int(data[1])!
+                let id = Int(data[1])! - 1
                 return ENTER(id: id)
             case "LEAVE":
-                let id = Int(data[1])!
+                let id = Int(data[1])! - 1
                 return LEAVE(id: id)
             default:
                 return .unknowed
@@ -45,6 +45,7 @@ struct HW4_Lvivstar {
 
 //MARK: - Input
 private extension HW4_Lvivstar {
+    // MARK: -  bottleneck using !
     func getInput() -> (baseStations: [Int], commands: [CommandsType]) {
         print("Set imput for HW4_Lvivstar:")
         _ = readLine()?.split(separator: " ")
@@ -76,14 +77,14 @@ private extension HW4_Lvivstar {
             switch com {
             case .COUNT(let fromId, let toId):
                 var counter = 0
-                for i in (fromId - 1)..<toId {
+                for i in fromId..<toId {
                     counter += stations[i]
                 }
                 print(counter)
             case .ENTER(let id):
-                stations[id - 1] += 1
+                stations[id] += 1
             case .LEAVE(let id):
-                stations[id - 1] -= 1
+                stations[id] -= 1
             case .unknowed:
                 print("error")
             }
@@ -128,14 +129,14 @@ private extension HW4_Lvivstar {
 //        }
         
         func positionInInterval(for id: Int) -> (intervalId: Int, idPosition: Int) {
-            let intervalId = (id - 1) / sizePerChunk
-            let idPosition = (id - 1) % sizePerChunk
+            let intervalId = id / sizePerChunk
+            let idPosition = id % sizePerChunk
             return (intervalId, idPosition)
         }
         
         var baseStations = baseStations
         
-        var responseData: [Int] = []
+        var output = ""
         
         for com in commands {
             switch com {
@@ -143,45 +144,43 @@ private extension HW4_Lvivstar {
                 
                 let lowPosition = positionInInterval(for: fromId)
                 let upperPosition = positionInInterval(for: toId)
+                var sum = 0
                 
                 if lowPosition.intervalId != upperPosition.intervalId {
                     var lowSum = intervals[lowPosition.intervalId]
                     for i in 0..<lowPosition.idPosition {
-                        lowSum -= (baseStations[fromId - 1 - lowPosition.idPosition + i])
+                        lowSum -= (baseStations[fromId - lowPosition.idPosition + i])
                     }
-                    
+                    // MARK: -   bottleneck using For loop instad while
                     var upperSum = 0
-                    for i in 1...upperPosition.idPosition + 1 {
-                        upperSum += (baseStations[toId - i])
+                    for i in 0...upperPosition.idPosition {
+                        upperSum += baseStations[toId - i]
                     }
                     
-                    var sum = lowSum + upperSum
+                    sum = lowSum + upperSum
                     
                     for i in (lowPosition.intervalId + 1)..<upperPosition.intervalId {
                         sum += intervals[i]
                     }
-                    responseData.append(sum)
                 } else {
-                    var sum = 0
-                    for i in fromId - 1..<toId {
+                    for i in fromId...toId {
                         sum += baseStations[i]
                     }
-                    responseData.append(sum)
                 }
+                output += "\(sum)\n"
             case .ENTER(let id):
-                baseStations[id - 1] += 1
-                let intervalId = (id - 1) / sizePerChunk
+                baseStations[id] += 1
+                let intervalId = id / sizePerChunk
                 intervals[intervalId] += 1
             case .LEAVE(let id):
-                baseStations[id - 1] -= 1
-                let intervalId = (id - 1) / sizePerChunk
+                baseStations[id] -= 1
+                let intervalId = id / sizePerChunk
                 intervals[intervalId] -= 1
             case .unknowed:
                 print("error")
             }
         }
-        let stringRepresentation = responseData.map{ String($0) }.joined(separator:"\n")
-        print(stringRepresentation)
+        print(output)
     }
 }
 
