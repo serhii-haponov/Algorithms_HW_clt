@@ -8,6 +8,5 @@
 import Foundation
 
 print("Hello, World!")
-HW4_Lvivstar_Refactored().start()
-//Lvivstar().start()
+HW4_PointsAndLines().start()
 

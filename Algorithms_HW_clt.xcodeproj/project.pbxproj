@@ -26,6 +26,7 @@
 		A8E0144428CB62D9002FA5E6 /* HW3_Garland.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E0144328CB62D9002FA5E6 /* HW3_Garland.swift */; };
 		A8EBE97E28D43CBC00B4D1EE /* HW4_Lvivstar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EBE97D28D43CBC00B4D1EE /* HW4_Lvivstar.swift */; };
 		A8EBE98028D4DF0E00B4D1EE /* BinarySearchTemp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EBE97F28D4DF0E00B4D1EE /* BinarySearchTemp.swift */; };
+		A8EBE98228D9FFC700B4D1EE /* HW4_PointsAndLines.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EBE98128D9FFC700B4D1EE /* HW4_PointsAndLines.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -61,6 +62,7 @@
 		A8E0144328CB62D9002FA5E6 /* HW3_Garland.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HW3_Garland.swift; sourceTree = "<group>"; };
 		A8EBE97D28D43CBC00B4D1EE /* HW4_Lvivstar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HW4_Lvivstar.swift; sourceTree = "<group>"; };
 		A8EBE97F28D4DF0E00B4D1EE /* BinarySearchTemp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinarySearchTemp.swift; sourceTree = "<group>"; };
+		A8EBE98128D9FFC700B4D1EE /* HW4_PointsAndLines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HW4_PointsAndLines.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 			children = (
 				A806D41C28D12C0F00C100BE /* HW4_SortedSquares.swift */,
 				A8EBE97D28D43CBC00B4D1EE /* HW4_Lvivstar.swift */,
+				A8EBE98128D9FFC700B4D1EE /* HW4_PointsAndLines.swift */,
 			);
 			path = HW4;
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 				A87532A128BB12B2002D1630 /* HW3_HR_1_10_100.swift in Sources */,
 				A806D41A28D1056100C100BE /* MergeSort.swift in Sources */,
 				A8EBE98028D4DF0E00B4D1EE /* BinarySearchTemp.swift in Sources */,
+				A8EBE98228D9FFC700B4D1EE /* HW4_PointsAndLines.swift in Sources */,
 				A875329628B0BDE8002D1630 /* HW2_Task4.swift in Sources */,
 				A875329528B0BDE5002D1630 /* HW2_Task3.swift in Sources */,
 				A8E013F428C20BAD002FA5E6 /* HW3_CF_BBooks.swift in Sources */,
