@@ -7,6 +7,9 @@
 
 import Foundation
 
+//a = [0, -10, 1, 4, 5, -123123123123]
+//#    l             m                r
+
 struct MergeSort {
     
     static func mergeSort(a: inout [Int]) {
