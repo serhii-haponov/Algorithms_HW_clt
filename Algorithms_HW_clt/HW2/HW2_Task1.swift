@@ -53,11 +53,8 @@ fileprivate struct CoordinatesDataSourse {
         print("Enter number of points")
         let numberOfPoints: Int = Int(readLine() ?? "0") ?? 0
         
-        var pointArray: [Coordinate]  = []
         for num in 1...numberOfPoints {
-            let xy = readLine()
             print("Enter \(num) (x,y) point")
-            print("Your input \(xy)")
         }
     }
 }

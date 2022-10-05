@@ -47,35 +47,76 @@ import Foundation
 //All the tweets have unique IDs.
 //At most 3 * 104 calls will be made to postTweet, getNewsFeed, follow, and unfollow.
 
+
+//struct LinkedList<Element> {
+//
+//    private class Node {
+//        let data: Element?
+//        var next: Node?
+//
+//        init(data: Element?, next: Node?) {
+//            self.data = data
+//            self.next = next
+//        }
+//    }
+//
+//    private let sentinel: Node
+//
+//    init() {
+//        sentinel = Node(data: nil, next: nil)
+//    }
+//
+//    init(val: Element) {
+//        sentinel = Node(data: nil, next: nil)
+//        sentinel.next = Node(data: val, next: nil)
+//    }
+//
+//    mutating func insertFirst(val: Element) {
+//        sentinel.next = Node(data: val, next: sentinel.next)
+//    }
+//
+//    func iterateWhileTrue(_ iteraction: (Element) -> Bool) {
+//        var craw: Node? = sentinel
+//        while craw != nil {
+//            if craw !== sentinel {
+//                let needToFinish = iteraction(craw!.data!)
+//                if needToFinish {
+//                    return
+//                }
+//            }
+//            craw = craw?.next
+//        }
+//    }
+//}
+
 class Twitter {
+    struct PostData {
+        let userId: Int
+        let tweetId: Int
+    }
     
+    var postsDataLL = LinkedList<PostData>()
     var followersData: [Int: Set<Int>] = [:]
-    var postsData: [Int: Set<Int>] = [:]
     
     init() { }
     
     func postTweet(_ userId: Int, _ tweetId: Int) {
-        if let _ = postsData[userId] {
-            postsData[userId]?.insert(tweetId)
-        } else {
-            postsData[userId] = [tweetId]
-        }
+        postsDataLL.insertFirst(val: PostData(userId: userId, tweetId: tweetId))
     }
     
     func getNewsFeed(_ userId: Int) -> [Int] {
-        var userPosts = postsData[userId] ?? []
         let followees = followersData[userId] ?? []
+        var posts: [Int] = []
+        var counter = 0
+        postsDataLL.iterateWhileTrue { postData in
+            if followees.contains(postData.userId) || postData.userId == userId {
+                posts.append(postData.tweetId)
+                counter += 1
+            }
+            return counter < 10 ? false : true
+        }
         
-//        for f in followees {
-//            userPosts = userPosts.union(postsData[f] ?? [])
-//        }
-        
-        let latestPosts = postsData
-            
-            .filter { followees.contains($0.key) || $0.key == userId }
-            .suffix(10)
-            .flatMap { $1 }
-        return latestPosts
+        return posts
     }
     
     func follow(_ followerId: Int, _ followeeId: Int) {
@@ -94,10 +135,18 @@ class Twitter {
 extension Twitter {
     
     //    Input
+//    1
 //["Twitter", "postTweet", "getNewsFeed", "follow", "postTweet", "getNewsFeed", "unfollow", "getNewsFeed"]
 //[[], [1, 5], [1], [1, 2], [2, 6], [1], [1, 2], [1]]
     //    Output
     //    [null, null, [5], null, null, [6, 5], null, [5]]
+    
+//------------------
+//   2 ["Twitter","postTweet","postTweet","postTweet","postTweet","postTweet","postTweet","postTweet","postTweet","postTweet","postTweet","postTweet","getNewsFeed"]
+    
+//    [[],[1,5],[1,3],[1,101],[1,13],[1,10],[1,2],[1,94],[1,505],[1,333],[1,22],[1,11],[1]]
+//    output
+//    [null,null,null,null,null,null,null,null,null,null,null,null,[11,22,333,505,94,2,10,13,101,3]]
     
     func start() {
         
@@ -105,13 +154,30 @@ extension Twitter {
         [
             .Twitter,
             .postTweet(userId: 1, tweetId: 5),
-            .getNewsFeed(userId: 1),
-            .follow(userId: 1, followingId: 2),
-            .postTweet(userId: 2, tweetId: 6),
-            .getNewsFeed(userId: 1),
-            .unfollow(userId: 1, followingId: 2),
+            .postTweet(userId: 1, tweetId: 3),
+            .postTweet(userId: 1, tweetId: 101),
+            .postTweet(userId: 1, tweetId: 13),
+            .postTweet(userId: 1, tweetId: 10),
+            .postTweet(userId: 1, tweetId: 2),
+            .postTweet(userId: 1, tweetId: 94),
+            .postTweet(userId: 1, tweetId: 505),
+            .postTweet(userId: 1, tweetId: 333),
+            .postTweet(userId: 1, tweetId: 22),
+            .postTweet(userId: 1, tweetId: 11),
             .getNewsFeed(userId: 1)
         ]
+        
+//        let commands: [CommandType] =
+//        [
+//            .Twitter,
+//            .postTweet(userId: 1, tweetId: 5),
+//            .getNewsFeed(userId: 1),
+//            .follow(userId: 1, followingId: 2),
+//            .postTweet(userId: 2, tweetId: 6),
+//            .getNewsFeed(userId: 1),
+//            .unfollow(userId: 1, followingId: 2),
+//            .getNewsFeed(userId: 1)
+//        ]
         
         for command in commands {
             switch command {

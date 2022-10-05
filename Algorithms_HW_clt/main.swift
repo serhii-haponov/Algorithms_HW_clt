@@ -8,12 +8,6 @@
 import Foundation
 
 print("Hello, World!")
-//Twitter().start()
-
-let ll = LinkedList<String>()
-
-ll.insertLast(val: "Last")
-
-ll.description()
+Twitter().start()
 
 

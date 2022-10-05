@@ -58,17 +58,64 @@ class LinkedList<Element> {
         size += 1
     }
     
+    func first() -> Element? {
+        sentinel.next?.data
+    }
+    
     func count() -> Int {
         return size
     }
     
+    @discardableResult
+    func filter(_ iteraction: (Element) -> Bool) -> [Element] {
+        var filteredElements: [Element] = []
+        var craw: Node? = sentinel
+        while craw != nil {
+            if craw != sentinel {
+                let accept = iteraction(craw!.data!)
+                if accept {
+                    filteredElements.append(craw!.data!)
+                }
+            }
+            craw = craw?.next
+        }
+        return filteredElements
+    }
+    
+    func iterateWhileTrue(_ iteraction: (Element) -> Bool) {
+        var craw: Node? = sentinel
+        while craw != nil {
+            if craw != sentinel {
+                let needToFinish = iteraction(craw!.data!)
+                if needToFinish {
+                    return
+                }
+            }
+            craw = craw?.next
+        }
+    }
+
     func description() {
         var craw: Node? = sentinel
         while craw != nil {
             if craw != sentinel {
-                print(craw?.data)
+                print(craw!.data!)
             }
             craw = craw?.next
         }
+    }
+    
+    func descriptionFirst(_ elementsNum: Int) -> [Element?] {
+        var counter = 0
+        var elements: [Element?] = []
+        var craw: Node? = sentinel
+        while craw != nil && counter <= elementsNum {
+            if craw != sentinel {
+                elements.append(craw?.data)
+            }
+            craw = craw?.next
+            counter += 1
+        }
+        return elements
     }
 }
