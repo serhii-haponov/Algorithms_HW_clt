@@ -47,35 +47,6 @@ import Foundation
 //All the tweets have unique IDs.
 //At most 3 * 104 calls will be made to postTweet, getNewsFeed, follow, and unfollow.
 
-enum CommandType {
-    case Twitter
-    case postTweet(userId: Int, tweetId: Int)
-    case getNewsFeed(userId: Int)
-    case follow(userId: Int, followingId: Int)
-    case unfollow(userId: Int, followingId: Int)
-    
-
-}
-
-extension String {
-    func setCommand(_ str: String, data: [Int]) -> CommandType {
-        switch self {
-        case "Twitter":
-            return .Twitter
-        case "postTweet":
-            return .postTweet(userId: data[0], tweetId: data[1])
-        case "getNewsFeed":
-            return .getNewsFeed(userId: data[0])
-        case "follow":
-            return .follow(userId: data[0], followingId: data[1])
-        case "unfollow":
-            return .unfollow(userId: data[0], followingId: data[1])
-        default:
-            fatalError("unrecognized command")
-        }
-    }
-}
-
 class Twitter {
     
     var followersData: [Int: Set<Int>] = [:]
@@ -95,16 +66,16 @@ class Twitter {
         var userPosts = postsData[userId] ?? []
         let followees = followersData[userId] ?? []
         
-        for f in followees {
-            userPosts = userPosts.union(postsData[f] ?? [])
-        }
+//        for f in followees {
+//            userPosts = userPosts.union(postsData[f] ?? [])
+//        }
         
-        let latastNews = userPosts.sorted { $0 > $1 }
-        if userPosts.count > 20 {
-            return userPosts.dropFirst(userPosts.count - 10).map { $0 }
-        } else {
-            return Array(userPosts)
-        }
+        let latestPosts = postsData
+            
+            .filter { followees.contains($0.key) || $0.key == userId }
+            .suffix(10)
+            .flatMap { $1 }
+        return latestPosts
     }
     
     func follow(_ followerId: Int, _ followeeId: Int) {
@@ -155,6 +126,33 @@ extension Twitter {
             case .unfollow(let userId, let followingId):
                 unfollow(userId, followingId)
             }
+        }
+    }
+}
+
+enum CommandType {
+    case Twitter
+    case postTweet(userId: Int, tweetId: Int)
+    case getNewsFeed(userId: Int)
+    case follow(userId: Int, followingId: Int)
+    case unfollow(userId: Int, followingId: Int)
+}
+
+extension String {
+    func setCommand(_ str: String, data: [Int]) -> CommandType {
+        switch self {
+        case "Twitter":
+            return .Twitter
+        case "postTweet":
+            return .postTweet(userId: data[0], tweetId: data[1])
+        case "getNewsFeed":
+            return .getNewsFeed(userId: data[0])
+        case "follow":
+            return .follow(userId: data[0], followingId: data[1])
+        case "unfollow":
+            return .unfollow(userId: data[0], followingId: data[1])
+        default:
+            fatalError("unrecognized command")
         }
     }
 }
