@@ -5,6 +5,8 @@
 //  Created by Serhii Haponov on 20.09.2022.
 //
 
+//https://www.eolymp.com/uk/problems/4430
+
 import Foundation
 
 //Точки та відрізки

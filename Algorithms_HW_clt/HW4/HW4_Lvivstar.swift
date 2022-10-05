@@ -5,6 +5,8 @@
 //  Created by Serhii Haponov on 16.09.2022.
 //
 
+//https://www.hackerrank.com/contests/projector-algo-online-hw-2-xew/
+
 import Foundation
 
 //MARK: - Start
