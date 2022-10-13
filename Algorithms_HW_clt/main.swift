@@ -8,6 +8,6 @@
 import Foundation
 
 print("Hello, World!")
-Twitter().start()
+HW4_MemoryManager().start()
 
 
