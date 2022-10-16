@@ -2,106 +2,84 @@
 //  Heap.swift
 //  Algorithms_HW_clt
 //
-//  Created by Serhii Haponov on 26.09.2022.
+//  Created by Serhii Haponov on 16.10.2022.
 //
 
 import Foundation
 
-struct Heap<Element> {
-    var elements : [Element]
-    let priorityFunction : (Element, Element) -> Bool
+struct Heap {
     
+    var a: [Int] = [0] //with sentinal
     
-    init(elements: [Element] = [], priorityFunction: @escaping (Element, Element) -> Bool) {
-      self.elements = elements
-      self.priorityFunction = priorityFunction
-      buildHeap()
+    var count: Int { a.count - 1 }
+    var peek: Int? { a[1] }
+    var isEmpty: Bool { a.count < 2 }
+    
+    init(array: [Int] = []) {
+        a.append(contentsOf: array)
+        sortN()
     }
-
-    mutating func enqueue(_ element: Element) {
-      elements.append(element)
-      siftUp(elementAtIndex: count - 1)
+    
+    mutating func insert(n: Int) {
+        a.append(n)
+        siftUp(index: count)
+    }
+    
+    mutating func extractPeek() {
+        guard count > 1 else { return }
+        a[1] = a[count]
+        a.remove(at: count)
+        siftDown(index: 1)
+    }
+    
+    mutating func extractBy(index: Int) {
+        guard index <= count else { return }
+        a[index] = a[count]
+        a.remove(at: count)
+        siftDown(index: index)
+    }
+    
+    mutating func sortNLogN() { // NLogN
+        for i in 1...count {
+            siftUp(index: i)
+        }
+    }
+    
+    mutating func sortN() {
+        for i in stride(from: count, to: 1, by: 1) {
+            siftDown(index: i)
+        }
     }
 }
 
-// MARK: - Private func
 private extension Heap {
     
-    mutating func buildHeap() {
-      for index in (0 ..< count / 2).reversed() { // work for N
-        siftDown(elementAtIndex: index)
-      }
+    mutating func siftUp(index: Int) { // logN
+        var i = index
+        while i > 0, a[i / 2] > a[i] {
+            a.swapAt(a[i / 2], a[i])
+            i /= 2
+        }
     }
     
-    mutating func siftUp(elementAtIndex index: Int) {
-      let parent = parentIndex(of: index)
-      guard !isRoot(index),
-        isHigherPriority(at: index, than: parent)
-        else { return }
-      swapElement(at: index, with: parent)
-      siftUp(elementAtIndex: parent)
-    }
-    
-    mutating func siftDown(elementAtIndex index: Int) {
-      let childIndex = highestPriorityIndex(for: index)
-      if index == childIndex {
-        return
-      }
-      swapElement(at: index, with: childIndex)
-      siftDown(elementAtIndex: childIndex)
-    }
-}
-
-// MARK: - Helpers
-private extension Heap {
-    // MARK: - priority queue functions
-    var isEmpty : Bool {
-      return elements.isEmpty
-    }
-
-    var count : Int {
-      return elements.count
-    }
-    
-    func peek() -> Element? {
-      return elements.first
-    }
-    
-    // MARK: - helper functions
-    
-    func isRoot(_ index: Int) -> Bool {
-      return (index == 0)
-    }
-
-    func leftChildIndex(of index: Int) -> Int {
-      return (2 * index) + 1
-    }
-
-    func rightChildIndex(of index: Int) -> Int {
-      return (2 * index) + 2
-    }
-
-    func parentIndex(of index: Int) -> Int {
-      return (index - 1) / 2
-    }
-    
-    func isHigherPriority(at firstIndex: Int, than secondIndex: Int) -> Bool {
-      return priorityFunction(elements[firstIndex], elements[secondIndex])
-    }
-    
-    func highestPriorityIndex(of parentIndex: Int, and childIndex: Int) -> Int {
-      guard childIndex < count && isHigherPriority(at: childIndex, than: parentIndex)
-        else { return parentIndex }
-      return childIndex
-    }
-        
-    func highestPriorityIndex(for parent: Int) -> Int {
-      return highestPriorityIndex(of: highestPriorityIndex(of: parent, and: leftChildIndex(of: parent)), and: rightChildIndex(of: parent))
-    }
-    
-    mutating func swapElement(at firstIndex: Int, with secondIndex: Int) {
-      guard firstIndex != secondIndex
-        else { return }
-        elements.swapAt(firstIndex, secondIndex)
+    mutating func siftDown(index: Int) { // N
+        var i = index
+        let i2 = 2 * i
+        while i2 < count {
+            var j = i
+            
+            if a[i2] < a[i] {
+                j = i2
+            }
+            
+            if i2 + 1 <= count, a[i2 + 1] < a[j] {
+                j = i2 + 1
+            }
+            
+            if j == i { break }
+            
+            a.swapAt(i, j)
+            i = j
+        }
     }
 }

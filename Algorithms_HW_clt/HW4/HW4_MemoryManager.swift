@@ -71,7 +71,6 @@ class LinkedListMemory {
         capacity - filledSpace
     }
 
-    
     init(capacity: Int) {
         self.capacity = capacity
         filledSpace = 0

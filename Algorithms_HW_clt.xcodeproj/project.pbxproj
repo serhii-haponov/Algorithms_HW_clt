@@ -16,6 +16,8 @@
 		A819331028F80E2200DFBBB9 /* RingBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A819330F28F80E2200DFBBB9 /* RingBuffer.swift */; };
 		A819331228F80E6200DFBBB9 /* QueueLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A819331128F80E6200DFBBB9 /* QueueLinkedList.swift */; };
 		A819331428F80EC200DFBBB9 /* QueueArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = A819331328F80EC200DFBBB9 /* QueueArray.swift */; };
+		A819331828FCA27000DFBBB9 /* HeapRW.swift in Sources */ = {isa = PBXBuildFile; fileRef = A819331728FCA27000DFBBB9 /* HeapRW.swift */; };
+		A819331A28FCA70800DFBBB9 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = A819331928FCA70800DFBBB9 /* Heap.swift */; };
 		A875328728B0ABB4002D1630 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = A875328628B0ABB4002D1630 /* main.swift */; };
 		A875329428B0BDE2002D1630 /* HW2_Task1.swift in Sources */ = {isa = PBXBuildFile; fileRef = A875329028B0B485002D1630 /* HW2_Task1.swift */; };
 		A875329528B0BDE5002D1630 /* HW2_Task3.swift in Sources */ = {isa = PBXBuildFile; fileRef = A875329128B0B485002D1630 /* HW2_Task3.swift */; };
@@ -40,7 +42,7 @@
 		A8EBE98028D4DF0E00B4D1EE /* BinarySearchTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EBE97F28D4DF0E00B4D1EE /* BinarySearchTemplate.swift */; };
 		A8EBE98228D9FFC700B4D1EE /* HW4_PointsAndLines.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EBE98128D9FFC700B4D1EE /* HW4_PointsAndLines.swift */; };
 		A8EE47C928DC5D0500CDA591 /* HW4_Design_Twitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EE47C828DC5D0500CDA591 /* HW4_Design_Twitter.swift */; };
-		A8EE47EB28E1F1BC00CDA591 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EE47EA28E1F1BC00CDA591 /* Heap.swift */; };
+		A8EE47EB28E1F1BC00CDA591 /* HeapRW2.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EE47EA28E1F1BC00CDA591 /* HeapRW2.swift */; };
 		A8EE47EE28E8E20300CDA591 /* InsertionSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EE47ED28E8E20300CDA591 /* InsertionSort.swift */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +68,8 @@
 		A819330F28F80E2200DFBBB9 /* RingBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RingBuffer.swift; sourceTree = "<group>"; };
 		A819331128F80E6200DFBBB9 /* QueueLinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueLinkedList.swift; sourceTree = "<group>"; };
 		A819331328F80EC200DFBBB9 /* QueueArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueArray.swift; sourceTree = "<group>"; };
+		A819331728FCA27000DFBBB9 /* HeapRW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeapRW.swift; sourceTree = "<group>"; };
+		A819331928FCA70800DFBBB9 /* Heap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Heap.swift; sourceTree = "<group>"; };
 		A875328328B0ABB4002D1630 /* Algorithms_HW_clt */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Algorithms_HW_clt; sourceTree = BUILT_PRODUCTS_DIR; };
 		A875328628B0ABB4002D1630 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		A875328E28B0B460002D1630 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
@@ -91,7 +95,7 @@
 		A8EBE97F28D4DF0E00B4D1EE /* BinarySearchTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinarySearchTemplate.swift; sourceTree = "<group>"; };
 		A8EBE98128D9FFC700B4D1EE /* HW4_PointsAndLines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HW4_PointsAndLines.swift; sourceTree = "<group>"; };
 		A8EE47C828DC5D0500CDA591 /* HW4_Design_Twitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HW4_Design_Twitter.swift; sourceTree = "<group>"; };
-		A8EE47EA28E1F1BC00CDA591 /* Heap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Heap.swift; sourceTree = "<group>"; };
+		A8EE47EA28E1F1BC00CDA591 /* HeapRW2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeapRW2.swift; sourceTree = "<group>"; };
 		A8EE47ED28E8E20300CDA591 /* InsertionSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertionSort.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -130,6 +134,7 @@
 		A819330328F7FAB400DFBBB9 /* RayWenderlich */ = {
 			isa = PBXGroup;
 			children = (
+				A819331628FCA25500DFBBB9 /* Heap */,
 				A819331528F80F8700DFBBB9 /* LinkedList */,
 				A819330628F8093C00DFBBB9 /* Queue */,
 			);
@@ -164,6 +169,15 @@
 				A8B8D39228EC975200845389 /* SwiftyLinkedList.swift */,
 			);
 			path = LinkedList;
+			sourceTree = "<group>";
+		};
+		A819331628FCA25500DFBBB9 /* Heap */ = {
+			isa = PBXGroup;
+			children = (
+				A8EE47EA28E1F1BC00CDA591 /* HeapRW2.swift */,
+				A819331728FCA27000DFBBB9 /* HeapRW.swift */,
+			);
+			path = Heap;
 			sourceTree = "<group>";
 		};
 		A875327A28B0ABB4002D1630 = {
@@ -233,7 +247,7 @@
 		A8B8D38B28EC281700845389 /* DataStructure */ = {
 			isa = PBXGroup;
 			children = (
-				A8EE47EA28E1F1BC00CDA591 /* Heap.swift */,
+				A819331928FCA70800DFBBB9 /* Heap.swift */,
 				A8B8D38D28EC287700845389 /* StackArray.swift */,
 				A8B8D38F28EC5C6400845389 /* LinkedList.swift */,
 				A8B8D39628EFF7FC00845389 /* DoubleLinkedList.swift */,
@@ -316,6 +330,7 @@
 				A8B8D39028EC5C6400845389 /* LinkedList.swift in Sources */,
 				A806D41A28D1056100C100BE /* MergeSort.swift in Sources */,
 				A8EBE98028D4DF0E00B4D1EE /* BinarySearchTemplate.swift in Sources */,
+				A819331828FCA27000DFBBB9 /* HeapRW.swift in Sources */,
 				A8B8D38E28EC287700845389 /* StackArray.swift in Sources */,
 				A819330B28F80D1000DFBBB9 /* QueueStack.swift in Sources */,
 				A8B8D39328EC975200845389 /* SwiftyLinkedList.swift in Sources */,
@@ -325,6 +340,7 @@
 				A8B8D39528EDEED100845389 /* HW4_MemoryManager.swift in Sources */,
 				A8E013F428C20BAD002FA5E6 /* HW3_CF_BBooks.swift in Sources */,
 				A875329B28B3E7C3002D1630 /* HW3_Most_Water.swift in Sources */,
+				A819331A28FCA70800DFBBB9 /* Heap.swift in Sources */,
 				A819330D28F80D8C00DFBBB9 /* QueueRingBuffer.swift in Sources */,
 				A875329728B0BDEA002D1630 /* HW2_Task2.swift in Sources */,
 				A8EBE97E28D43CBC00B4D1EE /* HW4_Lvivstar.swift in Sources */,
@@ -344,7 +360,7 @@
 				A819331428F80EC200DFBBB9 /* QueueArray.swift in Sources */,
 				A8E013F628C31F08002FA5E6 /* HW3_CF_BKefaAndCompany.swift in Sources */,
 				A8E0144228C7B97A002FA5E6 /* HW3_HR_Auto_Loan.swift in Sources */,
-				A8EE47EB28E1F1BC00CDA591 /* Heap.swift in Sources */,
+				A8EE47EB28E1F1BC00CDA591 /* HeapRW2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
