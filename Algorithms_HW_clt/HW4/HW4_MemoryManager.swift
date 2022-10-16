@@ -94,15 +94,24 @@ class LinkedListMemory {
         
         var craw = head.next
         while craw !== tail {
-            if craw?.id == 0 && (craw?.bufferSize ?? 0) >= val {
-                craw?.id = id
-                craw?.bufferSize = val
-                return counter
+            if let unwCraw = craw, unwCraw.id == 0 {
+                if unwCraw.bufferSize > val {
+                    let insertionNode = Node(bufferSize: val, next: craw, prev: craw?.prev, id: id)
+                    unwCraw.prev?.next = insertionNode
+                    unwCraw.prev = insertionNode
+                    unwCraw.bufferSize -= val
+                    return counter
+                }
+                
+                if unwCraw.bufferSize == val {
+                    unwCraw.id = id
+                    return counter
+                }
             }
             counter += craw!.bufferSize
             craw = craw?.next
         }
-        
+            
         if capacity - (counter - 1) >= val {
             let insertionNode = Node(bufferSize: val, next: tail, prev: craw?.prev, id: id)
             tail.prev?.next = insertionNode
