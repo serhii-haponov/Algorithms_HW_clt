@@ -46,11 +46,125 @@
 
 import Foundation
 
+class LinkedListMemory {
+    
+    private class Node {
+        var id: Int // id == 0 is a free space
+        var bufferSize: Int
+        var next: Node?
+        var prev: Node?
+        
+        init(bufferSize: Int, next: Node?, prev: Node?, id: Int) {
+            self.bufferSize = bufferSize
+            self.next = next
+            self.prev = prev
+            self.id = id
+        }
+    }
+    
+    private let head: Node = Node(bufferSize: 0, next: nil, prev: nil, id: -1)
+    private let tail: Node = Node(bufferSize: 0, next: nil, prev: nil, id: -1)
+    private let capacity: Int
+    private var filledSpace: Int
+    
+    private var freeSpace: Int {
+        capacity - filledSpace
+    }
+
+    
+    init(capacity: Int) {
+        self.capacity = capacity
+        filledSpace = 0
+        head.next = tail
+        tail.prev = head
+    }
+    
+//    init(val: Int, id: Int, capacity: Int) {
+//        sentinel = Node(bufferSize: 0, next: nil, id: 0)
+//        sentinel.next = Node(bufferSize: val, next: nil, id: id)
+//        filledSpace = val
+//        self.capacity = capacity
+//    }
+    
+    func insert(val: Int, id: Int) -> Int {
+        guard freeSpace >= val else {
+            return -1
+        }
+        var counter = 1
+        
+        var craw = head.next
+        while craw !== tail {
+            if craw?.id == 0 && (craw?.bufferSize ?? 0) >= val {
+                craw?.id = id
+                craw?.bufferSize = val
+                return counter
+            }
+            counter += craw!.bufferSize
+            craw = craw?.next
+        }
+        
+        if capacity - (counter - 1) >= val {
+            let insertionNode = Node(bufferSize: val, next: tail, prev: craw?.prev, id: id)
+            tail.prev?.next = insertionNode
+            tail.prev = insertionNode
+            filledSpace += val
+            return counter
+        }
+    
+        return -1
+    }
+        
+    func remove(id: Int) {
+        var craw = head.next
+        while craw !== tail {
+            if let craw = craw, craw.id == id {
+                var val = craw.bufferSize
+                
+                if let crawPrew = craw.prev, crawPrew.id == 0 {
+                    val += crawPrew.bufferSize
+                    crawPrew.prev?.next = craw
+                    craw.prev = crawPrew.prev
+                }
+                
+                if let crawNext = craw.next, crawNext.id == 0 {
+                    val += crawNext.bufferSize
+                    crawNext.next?.prev = craw
+                    craw.next = crawNext.next
+                }
+                
+                craw.id = 0
+                craw.bufferSize = val
+                filledSpace -= val
+                return
+            }
+            craw = craw?.next
+        }
+    }
+        
+    func count() -> Int {
+        return filledSpace
+    }
+    
+}
+
 //MARK: - Start
 struct HW4_MemoryManager {
     
     func start() {
         let input = getInput()
+        print("Start")
+        let dll = LinkedListMemory(capacity: input.memoryCapacity)
+        
+        for (i, q) in input.queries.enumerated() {
+            if q > 0 {
+              print(dll.insert(val: q, id: i + 1))
+            } else {
+                let id = abs(q)
+                dll.remove(id: id)
+            }
+            
+        }
+        
         print(input)
     }
 }
@@ -85,5 +199,8 @@ private extension HW4_MemoryManager {
 //MARK: - Execution
 private extension HW4_MemoryManager {
     
-    
+
 }
+
+
+//
