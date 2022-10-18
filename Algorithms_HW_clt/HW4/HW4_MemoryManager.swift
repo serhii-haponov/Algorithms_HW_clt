@@ -77,14 +77,7 @@ class LinkedListMemory {
         head.next = tail
         tail.prev = head
     }
-    
-//    init(val: Int, id: Int, capacity: Int) {
-//        sentinel = Node(bufferSize: 0, next: nil, id: 0)
-//        sentinel.next = Node(bufferSize: val, next: nil, id: id)
-//        filledSpace = val
-//        self.capacity = capacity
-//    }
-    
+        
     func insert(val: Int, id: Int) -> Int {
         guard freeSpace >= val else {
             return -1
@@ -157,12 +150,12 @@ class LinkedListMemory {
 
 //MARK: - Start
 struct HW4_MemoryManager {
-    
+
     func start() {
         let input = getInput()
         print("Start")
         let dll = LinkedListMemory(capacity: input.memoryCapacity)
-        
+
         for (i, q) in input.queries.enumerated() {
             if q > 0 {
               print(dll.insert(val: q, id: i + 1))
@@ -170,34 +163,37 @@ struct HW4_MemoryManager {
                 let id = abs(q)
                 dll.remove(id: id)
             }
-            
+
         }
-        
+
         print(input)
     }
 }
 
 //MARK: - Input
 private extension HW4_MemoryManager {
-    
+
     struct QueryData {
         let memoryCapacity: Int
         let queriesAmount: Int
         let queries: [Int]
     }
-    
+
     func getInput() -> QueryData {
+
+        let line = readLine()!
+        let firstLineString = line.split(separator: " ")
+        let firstLine = firstLineString.compactMap { Int($0) }
         
-        let firstLine = readLine()?.split(separator: " ").compactMap { Int($0) } ?? []
         let memoryCapacity = firstLine[0]
         let queryAmount = firstLine[1]
-        
+
         var queries: [Int] = []
         for _ in 0..<queryAmount {
             let q = Int(readLine()!)!
             queries.append(q)
         }
-        
+
         return QueryData(memoryCapacity: memoryCapacity,
                          queriesAmount: queryAmount,
                          queries: queries)
@@ -206,9 +202,144 @@ private extension HW4_MemoryManager {
 
 //MARK: - Execution
 private extension HW4_MemoryManager {
-    
+
 
 }
 
 
+
+// Kotlin
+
 //
+//internal class LinkedListMemory {
+//
+//    private class Node {
+//        var id: Int
+//        // id == 0 is a free space
+//        var bufferSize: Int
+//        var next: Node? = null
+//        var prev: Node? = null
+//
+//        constructor(bufferSize: Int, next: Node?, prev: Node?, id: Int) {
+//            this.bufferSize = bufferSize
+//            this.next = next
+//            this.prev = prev
+//            this.id = id
+//        }
+//    }
+//    private val head: Node = Node(bufferSize = 0, next = null, prev = null, id = -1)
+//    private val tail: Node = Node(bufferSize = 0, next = null, prev = null, id = -1)
+//    private val capacity: Int
+//    private var filledSpace: Int
+//    private val freeSpace: Int
+//        get() = capacity - filledSpace
+//
+//    internal constructor(capacity: Int) {
+//        this.capacity = capacity
+//        filledSpace = 0
+//        head.next = tail
+//        tail.prev = head
+//    }
+//
+//    internal fun insert(mem: Int, id: Int) : Int {
+//        if (freeSpace < mem) {
+//            return -1
+//        }
+//        var counter = 1
+//        var craw = head.next
+//        while (craw !== tail) {
+//            val unwCraw = craw
+//            if (unwCraw != null && unwCraw.id == 0) {
+//                if (unwCraw.bufferSize > mem) {
+//                    val insertionNode = Node(bufferSize = mem, next = craw, prev = craw?.prev, id = id)
+//                    unwCraw.prev?.next = insertionNode
+//                    unwCraw.prev = insertionNode
+//                    unwCraw.bufferSize -= mem
+//                    return counter
+//                }
+//                if (unwCraw.bufferSize == mem) {
+//                    unwCraw.id = id
+//                    return counter
+//                }
+//            }
+//            counter += craw!!.bufferSize
+//            craw = craw?.next
+//        }
+//        if (capacity - (counter - 1) >= mem) {
+//            val insertionNode = Node(bufferSize = mem, next = tail, prev = craw?.prev, id = id)
+//            tail.prev?.next = insertionNode
+//            tail.prev = insertionNode
+//            filledSpace += mem
+//            return counter
+//        }
+//        return -1
+//    }
+//
+//    internal fun remove(id: Int) {
+//        var craw = head.next
+//        while (craw != tail) {
+//            if (craw != null && craw.id == id) {
+//                var mam = craw.bufferSize
+//                val crawPrew = craw.prev
+//                if (crawPrew != null && crawPrew.id == 0) {
+//                    mam += crawPrew.bufferSize
+//                    crawPrew.prev?.next = craw
+//                    craw.prev = crawPrew.prev
+//                }
+//                val crawNext = craw.next
+//                if (crawNext != null && crawNext.id == 0) {
+//                    mam += crawNext.bufferSize
+//                    crawNext.next?.prev = craw
+//                    craw.next = crawNext.next
+//                }
+//                craw.id = 0
+//                craw.bufferSize = mam
+//                filledSpace -= mam
+//                return
+//            }
+//            craw = craw?.next
+//        }
+//    }
+//
+//    internal fun count() : Int =
+//        filledSpace
+//}
+//
+////MARK: - Start
+//internal class HW4_MemoryManager {
+//
+//    internal fun start() {
+//        val input = getInput()
+//        val dll = LinkedListMemory(capacity = input.memoryCapacity)
+//        var i = 0
+//        for (q: Int in input.queries) {
+//            if (q > 0) {
+//              println(dll.insert(mem = q, id = i + 1))
+//            } else {
+//              val id = q * -1
+//              dll.remove(id = id)
+//            }
+//          i ++
+//        }
+//    }
+//}
+//
+////MARK: - Input
+//private data class QueryData(
+//    val memoryCapacity: Int,
+//    val queriesAmount: Int,
+//    val queries: List<Int>) {}
+//
+//private fun getInput() : QueryData {
+//    val line = readLine()!!
+//    val firstLineString = line.split(" ")
+//    val firstLine = firstLineString.map { it.toInt() }
+//    val memoryCapacity = firstLine[0]
+//    val queryAmount = firstLine[1]
+//    var queries: List<Int> = listOf()
+//    for (i in 0 until queryAmount) {
+//        val q = readLine()!!.toInt()
+//        queries += q
+//    }
+//    return QueryData(memoryCapacity = memoryCapacity, queriesAmount = queryAmount, queries = queries)
+//}
