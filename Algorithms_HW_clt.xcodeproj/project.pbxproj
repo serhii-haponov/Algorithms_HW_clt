@@ -18,6 +18,12 @@
 		A819331428F80EC200DFBBB9 /* QueueArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = A819331328F80EC200DFBBB9 /* QueueArray.swift */; };
 		A819331828FCA27000DFBBB9 /* HeapRW.swift in Sources */ = {isa = PBXBuildFile; fileRef = A819331728FCA27000DFBBB9 /* HeapRW.swift */; };
 		A819331A28FCA70800DFBBB9 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = A819331928FCA70800DFBBB9 /* Heap.swift */; };
+		A819331D29008A9400DFBBB9 /* HW6_RGB_Street.swift in Sources */ = {isa = PBXBuildFile; fileRef = A819331C29008A9400DFBBB9 /* HW6_RGB_Street.swift */; };
+		A81933202901A04900DFBBB9 /* Vectors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A819331F2901A04900DFBBB9 /* Vectors.swift */; };
+		A81933222901B05D00DFBBB9 /* Fibonacci.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81933212901B05D00DFBBB9 /* Fibonacci.swift */; };
+		A81933242901B30600DFBBB9 /* Hanoi.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81933232901B30600DFBBB9 /* Hanoi.swift */; };
+		A819332629034B6000DFBBB9 /* RecursionPatern.swift in Sources */ = {isa = PBXBuildFile; fileRef = A819332529034B6000DFBBB9 /* RecursionPatern.swift */; };
+		A819332829056FF000DFBBB9 /* HW6_PlayGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A819332729056FF000DFBBB9 /* HW6_PlayGame.swift */; };
 		A875328728B0ABB4002D1630 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = A875328628B0ABB4002D1630 /* main.swift */; };
 		A875329428B0BDE2002D1630 /* HW2_Task1.swift in Sources */ = {isa = PBXBuildFile; fileRef = A875329028B0B485002D1630 /* HW2_Task1.swift */; };
 		A875329528B0BDE5002D1630 /* HW2_Task3.swift in Sources */ = {isa = PBXBuildFile; fileRef = A875329128B0B485002D1630 /* HW2_Task3.swift */; };
@@ -70,6 +76,12 @@
 		A819331328F80EC200DFBBB9 /* QueueArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueArray.swift; sourceTree = "<group>"; };
 		A819331728FCA27000DFBBB9 /* HeapRW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeapRW.swift; sourceTree = "<group>"; };
 		A819331928FCA70800DFBBB9 /* Heap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Heap.swift; sourceTree = "<group>"; };
+		A819331C29008A9400DFBBB9 /* HW6_RGB_Street.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HW6_RGB_Street.swift; sourceTree = "<group>"; };
+		A819331F2901A04900DFBBB9 /* Vectors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vectors.swift; sourceTree = "<group>"; };
+		A81933212901B05D00DFBBB9 /* Fibonacci.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fibonacci.swift; sourceTree = "<group>"; };
+		A81933232901B30600DFBBB9 /* Hanoi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hanoi.swift; sourceTree = "<group>"; };
+		A819332529034B6000DFBBB9 /* RecursionPatern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecursionPatern.swift; sourceTree = "<group>"; };
+		A819332729056FF000DFBBB9 /* HW6_PlayGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HW6_PlayGame.swift; sourceTree = "<group>"; };
 		A875328328B0ABB4002D1630 /* Algorithms_HW_clt */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Algorithms_HW_clt; sourceTree = BUILT_PRODUCTS_DIR; };
 		A875328628B0ABB4002D1630 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		A875328E28B0B460002D1630 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
@@ -113,6 +125,7 @@
 		A806D41828D1051300C100BE /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				A819331E2901A02A00DFBBB9 /* Recursion */,
 				A8B8D38B28EC281700845389 /* DataStructure */,
 				A8B8D38C28EC282D00845389 /* Operations */,
 			);
@@ -180,6 +193,26 @@
 			path = Heap;
 			sourceTree = "<group>";
 		};
+		A819331B29008A4600DFBBB9 /* HW6 */ = {
+			isa = PBXGroup;
+			children = (
+				A819331C29008A9400DFBBB9 /* HW6_RGB_Street.swift */,
+				A819332729056FF000DFBBB9 /* HW6_PlayGame.swift */,
+			);
+			path = HW6;
+			sourceTree = "<group>";
+		};
+		A819331E2901A02A00DFBBB9 /* Recursion */ = {
+			isa = PBXGroup;
+			children = (
+				A819332529034B6000DFBBB9 /* RecursionPatern.swift */,
+				A819331F2901A04900DFBBB9 /* Vectors.swift */,
+				A81933212901B05D00DFBBB9 /* Fibonacci.swift */,
+				A81933232901B30600DFBBB9 /* Hanoi.swift */,
+			);
+			path = Recursion;
+			sourceTree = "<group>";
+		};
 		A875327A28B0ABB4002D1630 = {
 			isa = PBXGroup;
 			children = (
@@ -205,6 +238,7 @@
 				A875328F28B0B485002D1630 /* HW2 */,
 				A875329928B3E691002D1630 /* HW3 */,
 				A806D41B28D12BB100C100BE /* HW4 */,
+				A819331B29008A4600DFBBB9 /* HW6 */,
 			);
 			path = Algorithms_HW_clt;
 			sourceTree = "<group>";
@@ -324,16 +358,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A819332629034B6000DFBBB9 /* RecursionPatern.swift in Sources */,
+				A81933222901B05D00DFBBB9 /* Fibonacci.swift in Sources */,
 				A819331228F80E6200DFBBB9 /* QueueLinkedList.swift in Sources */,
 				A875329428B0BDE2002D1630 /* HW2_Task1.swift in Sources */,
 				A87532A128BB12B2002D1630 /* HW3_HR_1_10_100.swift in Sources */,
 				A8B8D39028EC5C6400845389 /* LinkedList.swift in Sources */,
+				A81933202901A04900DFBBB9 /* Vectors.swift in Sources */,
 				A806D41A28D1056100C100BE /* MergeSort.swift in Sources */,
 				A8EBE98028D4DF0E00B4D1EE /* BinarySearchTemplate.swift in Sources */,
 				A819331828FCA27000DFBBB9 /* HeapRW.swift in Sources */,
 				A8B8D38E28EC287700845389 /* StackArray.swift in Sources */,
 				A819330B28F80D1000DFBBB9 /* QueueStack.swift in Sources */,
 				A8B8D39328EC975200845389 /* SwiftyLinkedList.swift in Sources */,
+				A819332829056FF000DFBBB9 /* HW6_PlayGame.swift in Sources */,
 				A8EBE98228D9FFC700B4D1EE /* HW4_PointsAndLines.swift in Sources */,
 				A875329628B0BDE8002D1630 /* HW2_Task4.swift in Sources */,
 				A875329528B0BDE5002D1630 /* HW2_Task3.swift in Sources */,
@@ -348,9 +386,11 @@
 				A8E0144428CB62D9002FA5E6 /* HW3_Garland.swift in Sources */,
 				A8EE47C928DC5D0500CDA591 /* HW4_Design_Twitter.swift in Sources */,
 				A819330228F7FA8600DFBBB9 /* DoublyLinkedList.swift in Sources */,
+				A819331D29008A9400DFBBB9 /* HW6_RGB_Street.swift in Sources */,
 				A819330828F8097000DFBBB9 /* Queue.swift in Sources */,
 				A875329D28B55CB8002D1630 /* HW3_Subarray_Sums.swift in Sources */,
 				A8B8D39728EFF7FC00845389 /* DoubleLinkedList.swift in Sources */,
+				A81933242901B30600DFBBB9 /* Hanoi.swift in Sources */,
 				A806D41D28D12C0F00C100BE /* HW4_SortedSquares.swift in Sources */,
 				A875329F28B66227002D1630 /* HW3_HR_Raskin_Bobbins.swift in Sources */,
 				A819331028F80E2200DFBBB9 /* RingBuffer.swift in Sources */,

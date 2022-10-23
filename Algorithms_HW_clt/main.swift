@@ -8,6 +8,8 @@
 import Foundation
 
 print("Hello, World!")
-HW4_MemoryManager().start()
+//HW4_MemoryManager().start()
+//RecursionPatern(n: 6).gen(prefix: [])
+HW6_RGB_Street().start()
 
 
