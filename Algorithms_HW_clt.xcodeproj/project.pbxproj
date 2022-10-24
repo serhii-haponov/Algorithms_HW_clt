@@ -24,6 +24,8 @@
 		A81933242901B30600DFBBB9 /* Hanoi.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81933232901B30600DFBBB9 /* Hanoi.swift */; };
 		A819332629034B6000DFBBB9 /* RecursionPatern.swift in Sources */ = {isa = PBXBuildFile; fileRef = A819332529034B6000DFBBB9 /* RecursionPatern.swift */; };
 		A819332829056FF000DFBBB9 /* HW6_PlayGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A819332729056FF000DFBBB9 /* HW6_PlayGame.swift */; };
+		A819332A2905ED5E00DFBBB9 /* Subsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81933292905ED5E00DFBBB9 /* Subsets.swift */; };
+		A819332C2905EE2000DFBBB9 /* Reshuffle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A819332B2905EE2000DFBBB9 /* Reshuffle.swift */; };
 		A875328728B0ABB4002D1630 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = A875328628B0ABB4002D1630 /* main.swift */; };
 		A875329428B0BDE2002D1630 /* HW2_Task1.swift in Sources */ = {isa = PBXBuildFile; fileRef = A875329028B0B485002D1630 /* HW2_Task1.swift */; };
 		A875329528B0BDE5002D1630 /* HW2_Task3.swift in Sources */ = {isa = PBXBuildFile; fileRef = A875329128B0B485002D1630 /* HW2_Task3.swift */; };
@@ -39,6 +41,7 @@
 		A8B8D39328EC975200845389 /* SwiftyLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B8D39228EC975200845389 /* SwiftyLinkedList.swift */; };
 		A8B8D39528EDEED100845389 /* HW4_MemoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B8D39428EDEED100845389 /* HW4_MemoryManager.swift */; };
 		A8B8D39728EFF7FC00845389 /* DoubleLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B8D39628EFF7FC00845389 /* DoubleLinkedList.swift */; };
+		A8DBADB329066F4D006053CA /* Сompounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DBADB229066F4D006053CA /* Сompounds.swift */; };
 		A8E013F428C20BAD002FA5E6 /* HW3_CF_BBooks.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E013F328C20BAD002FA5E6 /* HW3_CF_BBooks.swift */; };
 		A8E013F628C31F08002FA5E6 /* HW3_CF_BKefaAndCompany.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E013F528C31F08002FA5E6 /* HW3_CF_BKefaAndCompany.swift */; };
 		A8E0144028C534D3002FA5E6 /* HW3_CF_DNonSecretCypher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E0143F28C534D3002FA5E6 /* HW3_CF_DNonSecretCypher.swift */; };
@@ -82,6 +85,8 @@
 		A81933232901B30600DFBBB9 /* Hanoi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hanoi.swift; sourceTree = "<group>"; };
 		A819332529034B6000DFBBB9 /* RecursionPatern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecursionPatern.swift; sourceTree = "<group>"; };
 		A819332729056FF000DFBBB9 /* HW6_PlayGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HW6_PlayGame.swift; sourceTree = "<group>"; };
+		A81933292905ED5E00DFBBB9 /* Subsets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subsets.swift; sourceTree = "<group>"; };
+		A819332B2905EE2000DFBBB9 /* Reshuffle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reshuffle.swift; sourceTree = "<group>"; };
 		A875328328B0ABB4002D1630 /* Algorithms_HW_clt */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Algorithms_HW_clt; sourceTree = BUILT_PRODUCTS_DIR; };
 		A875328628B0ABB4002D1630 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		A875328E28B0B460002D1630 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
@@ -98,6 +103,7 @@
 		A8B8D39228EC975200845389 /* SwiftyLinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyLinkedList.swift; sourceTree = "<group>"; };
 		A8B8D39428EDEED100845389 /* HW4_MemoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HW4_MemoryManager.swift; sourceTree = "<group>"; };
 		A8B8D39628EFF7FC00845389 /* DoubleLinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleLinkedList.swift; sourceTree = "<group>"; };
+		A8DBADB229066F4D006053CA /* Сompounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Сompounds.swift"; sourceTree = "<group>"; };
 		A8E013F328C20BAD002FA5E6 /* HW3_CF_BBooks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HW3_CF_BBooks.swift; sourceTree = "<group>"; };
 		A8E013F528C31F08002FA5E6 /* HW3_CF_BKefaAndCompany.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HW3_CF_BKefaAndCompany.swift; sourceTree = "<group>"; };
 		A8E0143F28C534D3002FA5E6 /* HW3_CF_DNonSecretCypher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HW3_CF_DNonSecretCypher.swift; sourceTree = "<group>"; };
@@ -206,6 +212,9 @@
 			isa = PBXGroup;
 			children = (
 				A819332529034B6000DFBBB9 /* RecursionPatern.swift */,
+				A81933292905ED5E00DFBBB9 /* Subsets.swift */,
+				A819332B2905EE2000DFBBB9 /* Reshuffle.swift */,
+				A8DBADB229066F4D006053CA /* Сompounds.swift */,
 				A819331F2901A04900DFBBB9 /* Vectors.swift */,
 				A81933212901B05D00DFBBB9 /* Fibonacci.swift */,
 				A81933232901B30600DFBBB9 /* Hanoi.swift */,
@@ -380,6 +389,7 @@
 				A875329B28B3E7C3002D1630 /* HW3_Most_Water.swift in Sources */,
 				A819331A28FCA70800DFBBB9 /* Heap.swift in Sources */,
 				A819330D28F80D8C00DFBBB9 /* QueueRingBuffer.swift in Sources */,
+				A8DBADB329066F4D006053CA /* Сompounds.swift in Sources */,
 				A875329728B0BDEA002D1630 /* HW2_Task2.swift in Sources */,
 				A8EBE97E28D43CBC00B4D1EE /* HW4_Lvivstar.swift in Sources */,
 				A875328728B0ABB4002D1630 /* main.swift in Sources */,
@@ -387,6 +397,7 @@
 				A8EE47C928DC5D0500CDA591 /* HW4_Design_Twitter.swift in Sources */,
 				A819330228F7FA8600DFBBB9 /* DoublyLinkedList.swift in Sources */,
 				A819331D29008A9400DFBBB9 /* HW6_RGB_Street.swift in Sources */,
+				A819332A2905ED5E00DFBBB9 /* Subsets.swift in Sources */,
 				A819330828F8097000DFBBB9 /* Queue.swift in Sources */,
 				A875329D28B55CB8002D1630 /* HW3_Subarray_Sums.swift in Sources */,
 				A8B8D39728EFF7FC00845389 /* DoubleLinkedList.swift in Sources */,
@@ -395,6 +406,7 @@
 				A875329F28B66227002D1630 /* HW3_HR_Raskin_Bobbins.swift in Sources */,
 				A819331028F80E2200DFBBB9 /* RingBuffer.swift in Sources */,
 				A8E0144028C534D3002FA5E6 /* HW3_CF_DNonSecretCypher.swift in Sources */,
+				A819332C2905EE2000DFBBB9 /* Reshuffle.swift in Sources */,
 				A8EE47EE28E8E20300CDA591 /* InsertionSort.swift in Sources */,
 				A875329828B0BE0A002D1630 /* Utils.swift in Sources */,
 				A819331428F80EC200DFBBB9 /* QueueArray.swift in Sources */,

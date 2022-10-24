@@ -10,6 +10,7 @@ import Foundation
 print("Hello, World!")
 //HW4_MemoryManager().start()
 //RecursionPatern(n: 6).gen(prefix: [])
-HW6_RGB_Street().start()
+HW6_PlayGame().start()
+//Сompounds().gen(n: 5, k: 3)
 
 

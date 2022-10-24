@@ -85,3 +85,44 @@ import Foundation
 //Sample Output 4
 //
 //25084
+
+//MARK: - Start
+struct HW6_PlayGame {
+    
+    func start() {
+        let input = getInput()
+        calculate(input: input)
+    }
+}
+
+//MARK: - Input
+private extension HW6_PlayGame {
+    func getInput() -> ([Int], [Int]) {
+        let _ = readLine()
+        let secondLine = readLine()?.split(separator: " ").compactMap { Int($0) } ?? []
+        let thirdLine = readLine()?.split(separator: " ").compactMap { Int($0) } ?? []
+        
+        return (secondLine, thirdLine)
+    }
+}
+
+//MARK: - Execution
+private extension HW6_PlayGame {
+    
+    func calculate(input: ([Int], [Int])) {
+        let mySorted = input.0.sorted { $0 < $1 }
+        let computersSorted = input.1.sorted { $0 < $1 }
+        
+        var result = 0
+        var defeatable = mySorted.count - 1
+        
+        for i in stride(from: mySorted.count - 1, through: 0, by: -1) {
+            if computersSorted[i] < mySorted[defeatable] {
+                result += mySorted[defeatable]
+                defeatable -= 1
+            }
+        }
+        
+        print(result)
+    }
+}

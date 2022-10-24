@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+// Lection 16-17
 struct RecursionPatern {
     let n: Int // n = prefix.count by default
 

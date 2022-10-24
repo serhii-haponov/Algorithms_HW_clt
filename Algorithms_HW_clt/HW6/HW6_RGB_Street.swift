@@ -6,6 +6,7 @@
 //
 
 //https://www.hackerrank.com/contests/projector-algo-base-7-hw-4-yfff/challenges/rgb-street
+//https://www.hackerrank.com/projector-algo-base-7-hw-4-yfff
 
 //RGB Street
 
@@ -142,15 +143,16 @@ private extension HW6_RGB_Street {
     
     func gen(prefix: [Int]) {
         if prefix.count == n {
-            precess(prefix: (prefix))
+            print(prefix)
+//            precess(prefix: (prefix))
             return
         }
-        
+
         let count = prefix.count
         if !(count % 3 == 2 && prefix.last == 0 && prefix[count - 2] == 0) {
             gen(prefix: prefix + [0])
         }
-    
+
         if !(
             (count % 3 == 1 && prefix.last == 1) ||
             (count % 3 == 2 && (prefix.last == 1 || prefix[count - 2] == 1)) ||
@@ -159,6 +161,26 @@ private extension HW6_RGB_Street {
             gen(prefix: prefix + [1])
         }
     }
+    
+//    func gen(prefix: [Int]) {
+//        if prefix.count == n {
+//            print(prefix)
+////            precess(prefix: (prefix))
+//            return
+//        }
+//
+//        let count = prefix.count
+//        let palaceInSection = count % 3
+//        let lastSectionStart = count - palaceInSection
+//
+//        if !(count % 3 == 2 && prefix.last == 0 && prefix[count - 2] == 0) {
+//            gen(prefix: prefix + [0])
+//        }
+//
+//        if !(prefix[lastSectionStart..<count].contains(1) || (count > 3 && prefix[count - 3] == 1)) {
+//            gen(prefix: prefix + [1])
+//        }
+//    }
     
     
     func precess(prefix: [Int]) {
