@@ -10,7 +10,7 @@ import Foundation
 print("Hello, World!")
 //HW4_MemoryManager().start()
 //RecursionPatern(n: 6).gen(prefix: [])
-HW6_PlayGame().start()
+HW6_BitStrings().start()
 //Сompounds().gen(n: 5, k: 3)
 
 

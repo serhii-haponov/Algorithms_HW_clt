@@ -42,6 +42,7 @@
 		A8B8D39528EDEED100845389 /* HW4_MemoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B8D39428EDEED100845389 /* HW4_MemoryManager.swift */; };
 		A8B8D39728EFF7FC00845389 /* DoubleLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B8D39628EFF7FC00845389 /* DoubleLinkedList.swift */; };
 		A8DBADB329066F4D006053CA /* Сompounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DBADB229066F4D006053CA /* Сompounds.swift */; };
+		A8DBADB72907420F006053CA /* HW6_BitStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DBADB62907420F006053CA /* HW6_BitStrings.swift */; };
 		A8E013F428C20BAD002FA5E6 /* HW3_CF_BBooks.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E013F328C20BAD002FA5E6 /* HW3_CF_BBooks.swift */; };
 		A8E013F628C31F08002FA5E6 /* HW3_CF_BKefaAndCompany.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E013F528C31F08002FA5E6 /* HW3_CF_BKefaAndCompany.swift */; };
 		A8E0144028C534D3002FA5E6 /* HW3_CF_DNonSecretCypher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E0143F28C534D3002FA5E6 /* HW3_CF_DNonSecretCypher.swift */; };
@@ -104,6 +105,7 @@
 		A8B8D39428EDEED100845389 /* HW4_MemoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HW4_MemoryManager.swift; sourceTree = "<group>"; };
 		A8B8D39628EFF7FC00845389 /* DoubleLinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleLinkedList.swift; sourceTree = "<group>"; };
 		A8DBADB229066F4D006053CA /* Сompounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Сompounds.swift"; sourceTree = "<group>"; };
+		A8DBADB62907420F006053CA /* HW6_BitStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HW6_BitStrings.swift; sourceTree = "<group>"; };
 		A8E013F328C20BAD002FA5E6 /* HW3_CF_BBooks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HW3_CF_BBooks.swift; sourceTree = "<group>"; };
 		A8E013F528C31F08002FA5E6 /* HW3_CF_BKefaAndCompany.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HW3_CF_BKefaAndCompany.swift; sourceTree = "<group>"; };
 		A8E0143F28C534D3002FA5E6 /* HW3_CF_DNonSecretCypher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HW3_CF_DNonSecretCypher.swift; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 			children = (
 				A819331C29008A9400DFBBB9 /* HW6_RGB_Street.swift */,
 				A819332729056FF000DFBBB9 /* HW6_PlayGame.swift */,
+				A8DBADB62907420F006053CA /* HW6_BitStrings.swift */,
 			);
 			path = HW6;
 			sourceTree = "<group>";
@@ -402,6 +405,7 @@
 				A875329D28B55CB8002D1630 /* HW3_Subarray_Sums.swift in Sources */,
 				A8B8D39728EFF7FC00845389 /* DoubleLinkedList.swift in Sources */,
 				A81933242901B30600DFBBB9 /* Hanoi.swift in Sources */,
+				A8DBADB72907420F006053CA /* HW6_BitStrings.swift in Sources */,
 				A806D41D28D12C0F00C100BE /* HW4_SortedSquares.swift in Sources */,
 				A875329F28B66227002D1630 /* HW3_HR_Raskin_Bobbins.swift in Sources */,
 				A819331028F80E2200DFBBB9 /* RingBuffer.swift in Sources */,

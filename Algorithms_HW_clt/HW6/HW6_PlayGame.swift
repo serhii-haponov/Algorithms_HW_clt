@@ -8,6 +8,7 @@
 import Foundation
 
 //https://www.hackerrank.com/contests/projector-algo-base-7-hw-4-yfff/challenges/play-game-1
+//https://www.hackerrank.com/projector-algo-base-7-hw-4-yfff
 
 //Play Game
 //Problem
